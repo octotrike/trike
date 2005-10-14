@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:13",
+	"super" : "Object",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"id",
+		"name",
+		"notes",
+		"model"
+	],
+	"name" : "TrikeComponent",
+	"type" : "normal"
+}

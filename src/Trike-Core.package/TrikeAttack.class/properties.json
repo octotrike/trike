@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:36",
+	"super" : "TrikeGraphNode",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrikeAttack",
+	"type" : "normal"
+}

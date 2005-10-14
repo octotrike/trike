@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:52",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"value",
+		"actions",
+		"inScope"
+	],
+	"name" : "TrikeAsset",
+	"type" : "normal"
+}

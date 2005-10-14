@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeAtomicRule",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"actor"
+	],
+	"name" : "TrikeActorRule",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeGraphNode",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrikeRule",
+	"type" : "normal"
+}

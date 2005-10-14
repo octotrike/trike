@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "BEL 9/22/2005 19:13",
+	"super" : "Object",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"truthTable",
+		"index",
+		"marked"
+	],
+	"name" : "TrikeGrayCode",
+	"type" : "normal"
+}

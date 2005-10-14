@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "BEL 9/24/2005 19:29",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"action",
+		"asset",
+		"rule",
+		"intended",
+		"knownActors",
+		"attacks"
+	],
+	"name" : "TrikeAction",
+	"type" : "normal"
+}

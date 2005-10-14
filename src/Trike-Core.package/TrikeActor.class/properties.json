@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:14",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"risk",
+		"isAnonymous",
+		"representsSystem"
+	],
+	"name" : "TrikeActor",
+	"type" : "normal"
+}

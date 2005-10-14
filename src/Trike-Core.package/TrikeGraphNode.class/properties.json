@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"parents",
+		"children"
+	],
+	"name" : "TrikeGraphNode",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeBooleanRule",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrikeOrRule",
+	"type" : "normal"
+}

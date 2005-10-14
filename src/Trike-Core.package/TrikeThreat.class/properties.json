@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:31",
+	"super" : "TrikeAttack",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"action",
+		"riskFactor"
+	],
+	"name" : "TrikeThreat",
+	"type" : "normal"
+}

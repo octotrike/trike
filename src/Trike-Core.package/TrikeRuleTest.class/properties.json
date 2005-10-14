@@ -1,0 +1,22 @@
+{
+	"commentStamp" : "BEL 3/29/2005 18:03",
+	"super" : "TestCase",
+	"category" : "Trike-Core-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model",
+		"moonIsFull",
+		"professorForgot",
+		"student",
+		"timeMovingForwards",
+		"creatureLives",
+		"isStudent",
+		"wizard",
+		"isWizard",
+		"moonIsNotFull"
+	],
+	"name" : "TrikeRuleTest",
+	"type" : "normal"
+}
