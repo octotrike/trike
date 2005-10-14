@@ -1,0 +1,3 @@
+defaults
+defaultPageName
+	^'system'

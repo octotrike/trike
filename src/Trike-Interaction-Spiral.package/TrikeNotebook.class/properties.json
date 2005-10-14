@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "SpiralNotebook",
+	"category" : "Trike-Interaction-Spiral",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"Logo"
+	],
+	"instvars" : [
+		"automaticAssessmentSorting",
+		"heightCounter"
+	],
+	"name" : "TrikeNotebook",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeListSection",
+	"category" : "Trike-Interaction-Spiral",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrikeActorsSection",
+	"type" : "normal"
+}

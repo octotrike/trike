@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeIntersectionMorph",
+	"category" : "Trike-Interaction-Spiral",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"threat"
+	],
+	"name" : "TrikeAssetRiskIntersectionMorph",
+	"type" : "normal"
+}

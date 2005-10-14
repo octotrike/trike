@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "AlignmentMorph",
+	"category" : "Trike-Interaction-Spiral",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model",
+		"labelWidth",
+		"gridSquareColors",
+		"gridSquareStates"
+	],
+	"name" : "TrikeGridMorph",
+	"type" : "normal"
+}

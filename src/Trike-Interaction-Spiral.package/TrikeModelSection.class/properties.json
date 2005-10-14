@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "SpiralNotebook",
+	"category" : "Trike-Interaction-Spiral",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model"
+	],
+	"name" : "TrikeModelSection",
+	"type" : "normal"
+}
