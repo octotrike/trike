@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "BEL 5/17/2005 07:55",
+	"super" : "Model",
+	"category" : "Information-Diagrams-Data Flow",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"label",
+		"in",
+		"out",
+		"parent"
+	],
+	"name" : "DFDEntity",
+	"type" : "normal"
+}

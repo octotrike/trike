@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "<historical>",
+	"super" : "EMAttributeType",
+	"category" : "Information-Diagrams-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"relatedObjects"
+	],
+	"name" : "EMRelationshipType",
+	"type" : "normal"
+}
