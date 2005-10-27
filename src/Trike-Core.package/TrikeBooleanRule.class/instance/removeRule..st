@@ -4,4 +4,4 @@ removeRule: aRule
 
 	children remove: aRule.
 	aRule removeParent: self.
-	self changed: #rule
+	self triggerEvent: #rule

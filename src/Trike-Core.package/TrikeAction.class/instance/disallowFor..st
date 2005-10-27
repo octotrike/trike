@@ -9,7 +9,7 @@ disallowFor: anActor
 					notMe := TrikeActorRule actor: anActor.
 					notMe not: true.
 					self rule: notMe]
-				ifFalse: [self changed: #rule]]
+				ifFalse: [self triggerEvent: #rule]]
 		ifNotNil: [
 			self rule: (rule disallowFor: anActor).
 			rule ifNil: 

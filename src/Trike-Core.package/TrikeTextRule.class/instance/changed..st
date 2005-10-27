@@ -1,5 +1,5 @@
 event handling
 changed: aParameter 
-	super changed: aParameter.
+	super triggerEvent: aParameter.
 	aParameter = #name
-		ifTrue: [self changed:#rule]
+		ifTrue: [self triggerEvent:#rule]

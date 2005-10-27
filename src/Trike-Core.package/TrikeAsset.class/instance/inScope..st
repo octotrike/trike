@@ -4,5 +4,5 @@ inScope: aBoolean
 	inScope = aBoolean
 		ifTrue: [^ self].
 	inScope := aBoolean.
-	self changed: #inScope
+	self triggerEvent: #inScope
 	

@@ -5,7 +5,7 @@ absorb: anAction
 	oldNotes := self notes.
 	notes := oldNotes , anAction notes.
 	notes = oldNotes
-		ifFalse: [self changed: #notes].
+		ifFalse: [self triggerEvent: #notes].
 	rule
 		ifNil: [self rule: anAction rule]
 		ifNotNil: [| newRule | 

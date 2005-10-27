@@ -3,6 +3,6 @@ update: anAspect
 	"AnAspect of my asset has changed.  Update my dependents accordingly."
 
 	anAspect = #name ifTrue: [
-		self changed: #name].
+		self triggerEvent: #name].
 	anAspect = #value ifTrue: [
 		self changed: #exposure]

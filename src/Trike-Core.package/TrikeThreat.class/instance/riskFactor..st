@@ -8,5 +8,5 @@ riskFactor: nilOrNumber
 					and: [result <= 5])
 				ifFalse: [^ false]].
 	riskFactor := result.
-	self changed: #riskFactor.
+	self triggerEvent: #riskFactor.
 	^ true

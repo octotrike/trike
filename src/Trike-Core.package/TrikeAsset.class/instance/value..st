@@ -2,5 +2,5 @@ accessing
 value: aNumber 
 	"Set my value, typically in monetary units."
 	value := aNumber asInteger.
-	self changed: #value
+	self triggerEvent: #value
 	

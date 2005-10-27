@@ -13,4 +13,4 @@ action: anAction
 				ifNotNil: [action asset].
 	asset
 		ifNotNil: [asset addDependent: self].
-	self changed: #action
+	self triggerEvent: #action

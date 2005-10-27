@@ -6,4 +6,4 @@ simplifiedChildren: aCollection
 	children := aCollection asOrderedCollection.
 	children
 		do: [:child | child addParent: self].
-	self changed: #rule
+	self triggerEvent: #rule

@@ -11,4 +11,4 @@ rule: aRule
 			rule
 				ifNil: [intended ifTrue: [self removeThreatIfPresent: TrikeElevationOfPrivilegeThreat]]
 				ifNotNil: [rule addParent: self]].
-	self changed: #rule
+	self triggerEvent: #rule

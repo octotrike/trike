@@ -2,5 +2,5 @@ accessing
 notes: aStringOrText 
 	"Set my notes."
 	notes := aStringOrText asString.
-	self changed: #notes.
+	self triggerEvent: #notes.
 	^ true

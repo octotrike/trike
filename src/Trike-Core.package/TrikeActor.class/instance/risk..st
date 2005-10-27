@@ -7,5 +7,5 @@ risk: aNumber
 	result := aNumber asInteger.
 	result ifNotNil: [(result >= 1 and: [result <= 5]) ifFalse: [^false]].
 	risk := result.
-	self changed: #risk.
+	self triggerEvent: #risk.
 	^true

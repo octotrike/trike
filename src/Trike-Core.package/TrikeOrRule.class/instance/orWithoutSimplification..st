@@ -5,4 +5,4 @@ orWithoutSimplification: aRule
 	children
 		addAllFirstUnlessAlreadyPresent: (OrderedCollection with: aRule).
 	aRule addParent: self.
-	self changed: #rule
+	self triggerEvent: #rule
