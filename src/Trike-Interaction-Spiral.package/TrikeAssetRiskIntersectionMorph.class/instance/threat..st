@@ -7,4 +7,4 @@ threat: newThreat
 			threat := newThreat.
 			threat
 				ifNotNil: [threat addDependent: self]].
-	self changed: #currentState
+	self triggerEvent: #currentState

@@ -1,4 +1,4 @@
 accessing
 currentTreeItem: wrappedObject 
 	currentTreeItem := wrappedObject.
-	self changed: #currentTreeItem
+	self triggerEvent: #currentTreeItem

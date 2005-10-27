@@ -8,6 +8,6 @@ model: aModel
 	model ifNotNil: 
 			[self
 				buildPages;
-				changed: #sectionNavigationOperations;
+				triggerEvent: #sectionNavigationOperations;
 				goToPage: self defaultPage
 			"This is here to get around an updating bug for section names. "]
