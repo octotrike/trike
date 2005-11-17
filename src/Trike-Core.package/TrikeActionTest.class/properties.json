@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Trike-Core-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"receivedEvents",
+		"createCleartext",
+		"alice",
+		"cleartext",
+		"timestamp",
+		"readCleartext"
+	],
+	"name" : "TrikeActionTest",
+	"type" : "normal"
+}

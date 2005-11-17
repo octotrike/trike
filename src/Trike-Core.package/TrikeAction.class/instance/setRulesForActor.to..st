@@ -24,5 +24,5 @@ setRulesForActor: anActor to: possibilitySymbol
 				ifTrue: [| secondRule | 
 					secondRule := TrikeTextRule initializedInstance.
 					newRule := newRule /\ secondRule].
-			self intended: true.
-			self rule: newRule \/ rule]
+			self rule: newRule \/ rule.
+			self intended: true]

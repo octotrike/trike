@@ -1,8 +1,10 @@
 set up
 setUp
 	"Prepare my test fixture."
+	
+	| model |
 	super setUp.
-	model := TrikeModel initializedInstance.
+	model := TrikeModel named: 'rule test'.
 	moonIsFull := TrikeTextRule named: 'the moon is full'.
 	professorForgot := TrikeTextRule named: 'the professor forgot to take his hairball remedy'.
 	timeMovingForwards := TrikeTextRule named: 'Time is moving forwards'.
@@ -11,4 +13,5 @@ setUp
 	student := TrikeActor named: 'Student' in: model.
 	wizard := TrikeActor named: 'Wizard' in: model.
 	isStudent := TrikeActorRule actor: student.
-	isWizard := TrikeActorRule actor: wizard
+	isWizard := TrikeActorRule actor: wizard.
+	self clearReceivedEvents

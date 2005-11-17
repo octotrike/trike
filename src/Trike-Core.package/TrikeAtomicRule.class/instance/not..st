@@ -1,4 +1,5 @@
 accessing
 not: aBoolean
 	"Set whether my sense is inverted."
-	not := aBoolean
+	not := aBoolean.
+	self triggerEvent: #name

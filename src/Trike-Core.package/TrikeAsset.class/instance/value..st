@@ -1,6 +1,9 @@
 accessing
-value: aNumber 
+value: nilOrNumber
 	"Set my value, typically in monetary units."
-	value := aNumber asInteger.
-	self triggerEvent: #value
-	
+	| result |
+	result := nilOrNumber ifNotNil: [nilOrNumber asInteger].
+	value = result ifFalse: [
+		value := result.
+		self triggerEvent: #value].
+	^ true

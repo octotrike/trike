@@ -1,6 +1,6 @@
 accessing
 toggleNot
 	"Toggle whether my sense is inverted."
-	not := not
+	self not: (not
 				ifTrue: [false]
-				ifFalse: [true]
+				ifFalse: [true])

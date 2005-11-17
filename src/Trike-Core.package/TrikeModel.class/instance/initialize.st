@@ -11,5 +11,4 @@ initialize
 	
 Every finite system has external assets.   This model includes a generic external asset so that it can include attacks against other (probably not closely related) systems which this system enables.';
 		 inScope: false.
-	self addAsset: externalAsset.
 	dirty := false.

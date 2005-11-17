@@ -1,6 +1,7 @@
 accessing
 removeAttack: anAttack
 	"Remove anAttack from my collection of attacks."
-		
+	
+	anAttack unregisterForActionEvents.
 	attacks remove: anAttack.
-	self changed: #noAttack with: anAttack
+	self triggerEvent: #noAttack: with: anAttack

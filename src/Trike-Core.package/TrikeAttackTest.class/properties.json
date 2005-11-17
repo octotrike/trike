@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "BEL 11/10/2005 10:25",
+	"super" : "TestCase",
+	"category" : "Trike-Core-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"alice",
+		"cleartext",
+		"readCleartext",
+		"sniffCiphertext",
+		"decryptCiphertext",
+		"receivedEvents",
+		"createCleartext",
+		"timestamp"
+	],
+	"name" : "TrikeAttackTest",
+	"type" : "normal"
+}

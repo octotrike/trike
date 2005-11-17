@@ -1,0 +1,1 @@
+These tests test TrikeAttack and its subclasses.

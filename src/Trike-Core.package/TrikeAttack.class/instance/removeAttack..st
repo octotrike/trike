@@ -4,5 +4,5 @@ removeAttack: anAttack
 
 	children remove: anAttack.
 	anAttack removeParent: self.
-	self triggerEvent: #attack
+	self triggerEvent: #noAttack: with: anAttack
 	

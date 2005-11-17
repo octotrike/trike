@@ -1,5 +1,9 @@
 accessing
 actor: anActor
-	"Set my actor"
+	"Set my actor."
+	actor ifNotNil: [actor removeActionsWithReceiver: self forEvent: #name].
 	actor := anActor.
-	self triggerEvent: #rule
+	actor ifNotNil: [actor when: #name send: #triggerEvent: to: self with: #name].
+	self 
+		triggerEvent: #knownActor: with: actor;
+		triggerEvent: #name.

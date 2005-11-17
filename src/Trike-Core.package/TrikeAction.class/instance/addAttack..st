@@ -1,6 +1,6 @@
 accessing
-addAttack: anAttack
+addAttack: anAttack 
 	"Add anAttack to my collection of attacks."
-		
+	anAttack registerForActionEvents.
 	attacks add: anAttack.
-	self changed: #anAttack with: anAttack
+	self triggerEvent: #anAttack: with: anAttack

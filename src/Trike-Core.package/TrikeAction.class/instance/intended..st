@@ -5,11 +5,13 @@ intended: aBoolean
 		ifTrue: [^ self].
 	intended := aBoolean.
 	intended
-		ifTrue: [
-			self addThreatIfNotAlreadyPresent: TrikeDenialOfServiceThreat.
-			rule ifNil: [self removeThreatIfPresent: TrikeElevationOfPrivilegeThreat].
-			model changed: #anAction with: self]
-		ifFalse: [
-			self removeThreatIfPresent: TrikeDenialOfServiceThreat.
+		ifTrue: [self addThreatIfNotAlreadyPresent: TrikeDenialOfServiceThreat.
+			rule
+				ifNil: [self removeThreatIfPresent: TrikeElevationOfPrivilegeThreat].
+			model triggerEvent: #anAction: with: self;
+				 triggerEvent: #intendedActions]
+		ifFalse: [self removeThreatIfPresent: TrikeDenialOfServiceThreat.
 			self addThreatIfNotAlreadyPresent: TrikeElevationOfPrivilegeThreat.
-			model changed: #noAction with: self]
+			model triggerEvent: #noAction: with: self;
+				 triggerEvent: #intendedActions].
+	self triggerEvent: #rule

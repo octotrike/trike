@@ -7,6 +7,7 @@ riskFactor: nilOrNumber
 		ifNotNil: [(result >= 1
 					and: [result <= 5])
 				ifFalse: [^ false]].
-	riskFactor := result.
-	self triggerEvent: #riskFactor.
+	riskFactor = result ifFalse: [
+		riskFactor := result.
+		self triggerEvent: #riskFactor].
 	^ true

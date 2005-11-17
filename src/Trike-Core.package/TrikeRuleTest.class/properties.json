@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"model",
 		"moonIsFull",
 		"professorForgot",
 		"student",
@@ -15,7 +14,8 @@
 		"isStudent",
 		"wizard",
 		"isWizard",
-		"moonIsNotFull"
+		"moonIsNotFull",
+		"receivedEvents"
 	],
 	"name" : "TrikeRuleTest",
 	"type" : "normal"

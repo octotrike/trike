@@ -1,4 +1,4 @@
 testing
 = anObject 
-	^ self class = anObject class
+	^ super = anObject
 		and: [actor = anObject actor]
