@@ -6,7 +6,7 @@ initializeFor: aParameter action: aSymbol andAsset: anAsset
 	actionSymbol := aSymbol.
 	asset = anAsset 
 		ifFalse: 
-			[asset ifNotNil: [asset removeDependent: self].
+			[self unregisterForAssetEvents.
 			asset := anAsset.
-			asset addDependent: self].
-	self update: #currentState
+			self registerForAssetEvents].
+	self triggerEvent: #currentState

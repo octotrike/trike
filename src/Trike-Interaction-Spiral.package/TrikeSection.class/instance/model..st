@@ -1,13 +1,15 @@
 accessing
 model: aModel 
-	"Set my model variable, but don't set any dependency relationships.  
-	My parent will pass on relevant updates."
+	"Set my model variable and any dependency relationships."
 
+	model = aModel ifTrue: [^self].
+	self unregisterForEvents.
 	model := aModel.
 	self removeEverything.
 	model ifNotNil: 
 			[self
 				buildPages;
+				"This is here to get around an updating bug for section names."
 				triggerEvent: #sectionNavigationOperations;
-				goToPage: self defaultPage
-			"This is here to get around an updating bug for section names. "]
+				goToPage: self defaultPage].
+	self registerForEvents

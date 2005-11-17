@@ -1,10 +1,13 @@
 accessing
 model: anAssessment
-	"Set my model to anAssessment, make me its dependent, and populate my tabs accordingly."
+	"Set my model to anAssessment and populate my tabs accordingly."
 
-	model ifNotNil: [model removeDependent: self].
-	anAssessment ifNotNil: [anAssessment addDependent: self].
+	model = anAssessment ifTrue: [^self].
+	model ifNotNil: [
+		model removeActionsWithReceiver: self forEvent: #name].
 	model :=  anAssessment.
-
-	self update: #model with: anAssessment
-	
+	model ifNotNil: [
+		model when: #name send: #nameChanged to: self].
+	self nameChanged.
+	self pages do: [:m | 
+		m model: anAssessment]

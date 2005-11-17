@@ -2,7 +2,7 @@ initialization
 urlMorph
 	| result |
 	result := StringMorph
-				contents: 'http://www.hhhh.org/trike/'
+				contents: 'http://www.octotrike.org/'
 				font: (StrikeFont familyName: 'BitStreamVeraSerif' pointSize: 13).
 	result
 		beSticky;

@@ -1,10 +1,8 @@
 accessing
 threat: newThreat 
 	"Set my threat to newThreat."
-	threat = newThreat
-		ifFalse: [threat
-				ifNotNil: [threat removeDependent: self].
-			threat := newThreat.
-			threat
-				ifNotNil: [threat addDependent: self]].
-	self triggerEvent: #currentState
+	threat = newThreat ifTrue: [^self].
+	self unregisterForThreatEvents.
+	threat := newThreat.
+	self registerForThreatEvents.
+	self currentStateChanged

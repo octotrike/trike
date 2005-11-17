@@ -1,11 +1,11 @@
 event handling
 itemEditingOperations
-	"Answer a SpiralActions containing all rule editing operations 
+	"Answer a SpiralActions containing all rule editing operations  
 	my instances support."
 	| result operation current |
 	current := currentTreeItem model.
-	result := SpiralActions new.
-	operation := self actionCreationOperation.
+	result := OrderedCollection new.
+	operation := self actionCreationAction.
 	operation
 		ifNotNil: [result add: operation].
 	current topLevel
@@ -24,24 +24,21 @@ itemEditingOperations
 			and: [current isEditable])
 		ifTrue: [result add: self constrainedClauseOperations].
 	current topLevel
-		ifTrue: [operation := SpiralAction
+		ifTrue: [operation := GenericAction
 						label: 'always allow ' , current label
-						buttonLabel: nil
 						receiver: self
 						selector: #removeAllRules
 						arguments: #().
 			operation help: 'allow this action to occur under all conditions']
-		ifFalse: [operation := SpiralAction
+		ifFalse: [operation := GenericAction
 						label: 'remove selected rule'
-						buttonLabel: nil
 						receiver: self
 						selector: #removeRule
 						arguments: #()].
 	result add: operation.
 	current topLevel
-		ifTrue: [operation := SpiralAction
+		ifTrue: [operation := GenericAction
 						label: 'disallow ' , current label
-						buttonLabel: nil
 						receiver: self
 						selector: #removeAction
 						arguments: #().

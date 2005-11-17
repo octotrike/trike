@@ -10,7 +10,7 @@ initializeFor: aParameter action: aSymbol andAsset: anAsset
 	newAction := asset actionAt: actionSymbol.
 	action = newAction 
 		ifFalse: 
-			[action ifNotNil: [action removeActionsWithReceiver: self forEvent: #rule].
+			[self unregisterForActionEvents.
 			action := newAction.
-			action ifNotNil: [action when: #rule send: #updateState to: self]].
-	self update: #currentState
+			self registerForActionEvents].
+	self currentStateChanged

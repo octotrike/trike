@@ -1,14 +1,13 @@
 event handling
 itemEditingOperations: aComponent 
-	"Answer a SpiralActions containing all item editing operations  
+	"Answer an OrderedCollection containing all item editing operations  
 	my instances support."
+
 	| result |
-	result := SpiralActions new.
-	result
-		add: (SpiralAction
+	result := OrderedCollection new.
+	result add: (GenericAction 
 				label: 'remove ' , self componentName
-				buttonLabel: nil
 				receiver: aComponent
 				selector: #remove
 				arguments: #()).
-	^ result
+	^result

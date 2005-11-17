@@ -1,3 +1,3 @@
 accessing
 version
-	^ 'Trike v1 build 5'
+	^ 'Trike v1 unversioned alpha, post build 5'

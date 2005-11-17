@@ -1,7 +1,6 @@
 initialization
 buildTree
 	"Create morphs for my tree."
-	| tree |
 	tree := EditableHierarchicalListMorph
 				on: self
 				list: #items
@@ -13,7 +12,8 @@ buildTree
 		 setNameTo: self defaultName , ' tree'.
 	self addPage.
 	currentPage setNameTo: 'tree';
-		dropEnabled: false;
+		 dropEnabled: false;
+		
 		addMorph: tree
 		fullFrame: (LayoutFrame
 				fractions: (0 @ 0 corner: 1.0 @ 1.0));

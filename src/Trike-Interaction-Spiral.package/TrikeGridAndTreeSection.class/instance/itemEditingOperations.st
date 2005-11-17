@@ -1,5 +1,5 @@
 event handling
 itemEditingOperations
-	"Answer a SpiralActions containing all item editing operations my  
+	"Answer an OrderedCollection containing all item editing operations my  
 	instances support."
-	^SpiralActions new.
+	^OrderedCollection new.
