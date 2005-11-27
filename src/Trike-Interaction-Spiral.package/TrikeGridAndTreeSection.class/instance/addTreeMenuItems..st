@@ -1,5 +1,5 @@
 event handling
 addTreeMenuItems: aMenu 
-	currentTreeItem
-		ifNotNil: [self itemEditingOperations addItemsToMenu: aMenu].
-	^ aMenu
+	^currentTreeItem
+		ifNil: [aMenu]
+		ifNotNil: [(MorphicMenuAction wrap: self itemEditingAction) actionsMenu]
