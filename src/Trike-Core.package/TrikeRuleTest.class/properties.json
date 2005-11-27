@@ -15,7 +15,8 @@
 		"wizard",
 		"isWizard",
 		"moonIsNotFull",
-		"receivedEvents"
+		"receivedEvents",
+		"isNotStudent"
 	],
 	"name" : "TrikeRuleTest",
 	"type" : "normal"

@@ -1,4 +1,5 @@
 testing
 = anObject 
 	^ self class = anObject class
-		and: [self id = anObject id]
+		and: [self model = anObject model]
+		and: [self name = anObject name]
