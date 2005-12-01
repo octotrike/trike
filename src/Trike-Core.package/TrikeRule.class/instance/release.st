@@ -5,4 +5,5 @@ release
 	super release.
 	self 
 		removeActionsWithReceiver: self forEvent: #name;
-		removeActionsWithReceiver: self forEvent: #not
+		removeActionsWithReceiver: self forEvent: #not;
+		removeActionsWithReceiver: self forEvent: #knownActor:

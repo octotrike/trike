@@ -1,7 +1,7 @@
 event handling
 removeRuleAction: child 
 	^ GenericAction
-		label: 'remove rule'
+		label: 'remove selected rule'
 		receiver: self
 		selector: #removeRule:
 		arguments: {child}

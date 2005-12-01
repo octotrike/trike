@@ -12,6 +12,5 @@ actionCreationActions
 								label: actionSymbol
 								receiver: action
 								selector: #intended:
-								arguments: {true})]].
+								arguments: ((Array new: 1) at: 1 put: true; yourself))]].
 	^ result
-		ifEmpty: []

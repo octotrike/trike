@@ -9,9 +9,11 @@ intended: aBoolean
 			rule
 				ifNil: [self removeThreatIfPresent: TrikeElevationOfPrivilegeThreat].
 			model triggerEvent: #anAction: with: self;
-				 triggerEvent: #intendedActions]
+				 triggerEvent: #intendedActions.
+			self triggerEvent: #rule]
 		ifFalse: [self removeThreatIfPresent: TrikeDenialOfServiceThreat.
 			self addThreatIfNotAlreadyPresent: TrikeElevationOfPrivilegeThreat.
 			model triggerEvent: #noAction: with: self;
-				 triggerEvent: #intendedActions].
-	self triggerEvent: #rule
+				 triggerEvent: #intendedActions.
+			knownActors := Set new.
+			self rule: nil]
