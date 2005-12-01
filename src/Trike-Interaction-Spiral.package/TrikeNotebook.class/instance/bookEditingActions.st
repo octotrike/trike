@@ -1,13 +1,13 @@
-operations
+event handling
 bookEditingActions
-	"Answer an OrderedCollection containing all book editing operations  
+	"Answer an OrderedCollection containing all book editing actions  
 	my instances support."
 	| result |
-	result := self modelCreationActions.
+	result := OrderedCollection new.
 	result
 		add: (GenericAction
-				label: 'close'
+				label: 'new'
 				receiver: self
-				selector: #removePage
+				selector: #addPage
 				arguments: #()).
 	^ result

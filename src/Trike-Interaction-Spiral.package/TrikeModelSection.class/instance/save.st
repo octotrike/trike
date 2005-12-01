@@ -1,4 +1,3 @@
 event handling
-saveAs: format
-
+save
 	self needsWork

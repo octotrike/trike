@@ -11,7 +11,7 @@ allButtonActions
 				add: (GenericActions
 						label: 'opening assessments'
 						receiver: notebook
-						selector: #modelCreationActions
+						selector: #bookEditingActions
 						arguments: #())
 				beforeIndex: 1].
 	^ result

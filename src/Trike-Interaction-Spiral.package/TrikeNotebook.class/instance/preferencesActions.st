@@ -1,4 +1,4 @@
-operations
+event handling
 preferencesActions
 	"Answer an OrderedCollection containing all preferences categories  
 	that are interesting for me."

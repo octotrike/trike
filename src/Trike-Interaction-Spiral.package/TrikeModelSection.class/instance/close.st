@@ -1,10 +1,8 @@
 event handling
-close: evt
+close
 	
 	"Do we need to save the current assessment?"
-	model isDirty ifTrue: [
-		self save: evt].
-
+	self needsWork.
 	owner removePage: self
 	
 	
