@@ -5,8 +5,7 @@ inScopeChanged
 	asset inScope
 		ifTrue: [
 			self
-				intended: false;
-				rule: nil]
+				intended: false]
 		ifFalse: [
 			self
 				intended: true;

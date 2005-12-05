@@ -3,5 +3,6 @@ model: aModel
 	"Set the model I am part of."
 	model = aModel
 		ifTrue: [^ self].
+	self unregisterModelForEvents.
 	model := aModel.
-	self triggerEvent: #model
+	self registerModelForEvents; triggerEvent: #model
