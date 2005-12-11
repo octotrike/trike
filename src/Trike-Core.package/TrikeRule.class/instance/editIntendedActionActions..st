@@ -5,15 +5,15 @@ editIntendedActionActions: parent
 	| result |
 	result := OrderedCollection new.
 	result
-		add: (parent addRuleActionNamed: #sibling);
+		add: (parent addActionNamed: #sibling);
 		
-		add: (self addRuleActionNamed: #child);
+		add: (self addActionNamed: #child);
 		
-		add: (parent removeRuleAction: self);
+		add: (parent removeAction: self);
 		add: (self unlinkingFromAction: parent);
-		 add: self clauseEditingAction;
-		 add: self negationAction;
-		 add: self simplificationAction;
+		add: self clauseEditingAction;
+		add: self negationAction;
+		add: self simplificationAction;
 		
 		addAll: (parent treeEditingActions: self).
 	^ result copyWithout: nil

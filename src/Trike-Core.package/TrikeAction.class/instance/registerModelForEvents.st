@@ -6,4 +6,9 @@ registerModelForEvents
 				when: #rule
 				send: #triggerEvent:
 				to: model
-				with: #intendedActions]
+				with: #intendedActions;
+				
+				when: #attacks
+				send: #triggerEvent:
+				to: model
+				with: #attacks]

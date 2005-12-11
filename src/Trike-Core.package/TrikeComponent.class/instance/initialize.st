@@ -4,4 +4,5 @@ initialize
 	super initialize.
 	id := UUID new.
 	name := ''.
-	notes := ''
+	notes := ''.
+	self registerForSelfEvents

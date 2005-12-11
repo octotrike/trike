@@ -7,7 +7,7 @@ attacks
 					aExposure := a exposure.
 					bExposure := b exposure.
 					b exposure
-						ifNil: [false]
+						ifNil: [true]
 						ifNotNil: [aExposure isNil or: [bExposure <= aExposure]]].
 	self assets
 		do: [:asset | result addAll: asset attacks].

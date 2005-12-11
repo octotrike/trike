@@ -1,7 +1,7 @@
 accessing
 addParent: trikeComponent 
 	"Add trikeComponent as my new parent."
-	parents add: trikeComponent.
+	super addParent: trikeComponent.
 	self
 		when: #rule
 		send: #triggerEvent:

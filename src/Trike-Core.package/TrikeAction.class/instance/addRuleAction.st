@@ -5,6 +5,6 @@ addRuleAction
 				ifNil: ['only']
 				ifNotNil: ['also'])
 				, ' allow ' , self label , ' when'
-		receiver: TrikeRule
-		selector: #addRulesAction:
+		receiver: self baseNodeClass
+		selector: #addNodesAction:
 		arguments: {self}

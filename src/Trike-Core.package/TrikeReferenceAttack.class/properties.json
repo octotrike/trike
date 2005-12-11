@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeAttack",
+	"category" : "Trike-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"target"
+	],
+	"name" : "TrikeReferenceAttack",
+	"type" : "normal"
+}
