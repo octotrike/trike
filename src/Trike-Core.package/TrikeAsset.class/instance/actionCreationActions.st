@@ -12,5 +12,5 @@ actionCreationActions
 								label: actionSymbol
 								receiver: action
 								selector: #intended:
-								arguments: ((Array new: 1) at: 1 put: true; yourself))]].
+								arguments: {true})]].
 	^ result

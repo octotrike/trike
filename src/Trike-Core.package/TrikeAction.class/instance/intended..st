@@ -18,5 +18,4 @@ intended: aBoolean
 			model
 				triggerEvent: #noAction: with: self;
 				triggerEvent: #intendedActions.
-			knownActors := Set new.
 			self rule: nil]
