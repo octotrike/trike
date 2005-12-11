@@ -10,6 +10,7 @@ editIntendedActionActions: parent
 		add: (self addRuleActionNamed: #child);
 		
 		add: (parent removeRuleAction: self);
+		add: (self unlinkingFromAction: parent);
 		 add: self clauseEditingAction;
 		 add: self negationAction;
 		 add: self simplificationAction;
