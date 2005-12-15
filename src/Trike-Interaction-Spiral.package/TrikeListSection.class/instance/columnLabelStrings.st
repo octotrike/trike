@@ -1,5 +1,4 @@
 accessing
 columnLabelStrings
-	"Answer strings to use as labels for my columns. You probably want  
-	to change me in parallel with columnConstructorSelectors."
-	^ {'name'. 'notes'}
+	"Answer strings to use as labels for my columns."
+	^ {'name' }, self customColumnLabelStrings, { 'notes'}
