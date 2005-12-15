@@ -1,6 +1,6 @@
 event handling
 unlinkFrom: parent
-	"Turn all instances of the identical rule into seperate instances."
+	"Turn this instance of the identical rule into a seperate instance."
 	| replacement |
 	replacement := self copy.
 	parent replaceRule: self with: replacement.

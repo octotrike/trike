@@ -3,9 +3,7 @@ actions
 	"Answer my intended actions."
 	| result |
 	result := OrderedCollection new.
-	self assets asSortedCollection
-		do: [:asset | 
+	self assets do: [:asset | 
 			asset inScope ifTrue: [
-				asset actions asSortedCollection
-					do: [:action | result add: action]]].
+				asset actions do: [:action | result add: action]]].
 	^ result
