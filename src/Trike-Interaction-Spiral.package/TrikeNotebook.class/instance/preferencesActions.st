@@ -6,8 +6,13 @@ preferencesActions
 	result := OrderedCollection new.
 	result
 		add: (GenericActions
-				label: 'display preferences'
+				label: 'appearance'
 				receiver: self
 				selector: #displayPreferencesActions
+				arguments: #());
+		add: (GenericActions
+				label: 'behavior'
+				receiver: self
+				selector: #behaviorPreferencesActions
 				arguments: #()).
 	^ result

@@ -9,7 +9,7 @@ allButtonActions
 	notebook
 		ifNotNil: [result
 				add: (GenericActions
-						label: 'opening assessments'
+						label: 'opening models'
 						receiver: notebook
 						selector: #bookEditingActions
 						arguments: #())
