@@ -18,12 +18,16 @@ addLabel
 		 string: self rowLabelString;
 		 extent: (w * 0.6) @ (w * 0.15).
 	gridMorph := self crudMorph: w * 0.65.
-	label := Morph new.
+	label := MorphicModel new.
 	label 
+		borderWidth: 0;
+		layoutInset: 0;
+		model: self;
 		width: w; 
 		height: w;
 		color: Color transparent;
-		addMorph: columnLabel.
+		addMorph: columnLabel;
+		on: #mouseDown send: #gridMenuEvent:over: to: self.
 	columnCenter := (label rightCenter - (columnWidthOffset @ 0)) asPoint.
 	columnLabel center: columnCenter.
 	label addMorph: rowString.

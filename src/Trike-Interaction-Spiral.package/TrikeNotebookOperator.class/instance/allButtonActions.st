@@ -6,12 +6,17 @@ allButtonActions
 	interest me."
 	| result |
 	result := super allButtonActions.
-	notebook
-		ifNotNil: [result
-				add: (GenericActions
-						label: 'opening models'
-						receiver: notebook
-						selector: #bookEditingActions
-						arguments: #())
-				beforeIndex: 1].
+	result
+		add: (GenericActions
+				label: 'opening models'
+				receiver: notebook
+				selector: #bookEditingActions
+				arguments: #())
+		beforeIndex: 1.
+	result
+		add: (GenericActions
+				label: 'Squeak functions'
+				receiver: self class
+				selector: #squeakActions
+				arguments: #()).
 	^ result

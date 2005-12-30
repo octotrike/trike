@@ -1,3 +1,3 @@
 accessing
 version
-	^ 'Trike v1 unversioned alpha, post build 5'
+	^ '1.1.2a', (self isDevelopmentVersion ifTrue: ['-dev'] ifFalse: [''])

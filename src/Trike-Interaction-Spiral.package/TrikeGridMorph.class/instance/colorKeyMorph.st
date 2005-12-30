@@ -16,6 +16,7 @@ colorKeyMorph
 						 yourself].
 	holderMorph := AlignmentMorph inAColumn: keyMorphs.
 	holderMorph borderWidth: 0;
-		 hResizing: #shrinkWrap;
-		 vResizing: #shrinkWrap.
+		hResizing: #shrinkWrap;
+		vResizing: #shrinkWrap;
+		layoutInset: 0.
 	^ holderMorph

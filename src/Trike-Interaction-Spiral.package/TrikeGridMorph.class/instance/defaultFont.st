@@ -1,3 +1,3 @@
 defaults
 defaultFont
-	^TTFontDescription descriptionNamed: 'BitstreamVeraSerif'.
+	^TextStyle defaultFont ttcDescription
