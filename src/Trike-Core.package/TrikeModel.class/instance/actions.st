@@ -1,6 +1,6 @@
 accessing
 actions
-	"Answer my intended actions."
+	"Answer all possible actions, intended or not."
 	| result |
 	result := OrderedCollection new.
 	self assets do: [:asset | 

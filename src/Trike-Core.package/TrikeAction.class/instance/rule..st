@@ -14,6 +14,7 @@ rule: aRule
 				ifNotNil: [
 					self 
 						intended: true;
-						addThreatIfNotAlreadyPresent: TrikeElevationOfPrivilegeThreat.
+						addThreatIfNotAlreadyPresent: TrikeElevationOfPrivilegeThreat;
+						updateKnownActors.
 					rule addParent: self]].
 	self triggerEvent: #rule

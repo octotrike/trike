@@ -5,7 +5,6 @@ editIntendedActionActions: parent
 	| result |
 	result := OrderedCollection new.
 	result
-		addAll: (model editIntendedActionActions: parent);
 		add: self addRuleAction.
 	rule ifNotNil: [result add: self alwaysAllowAction].
 	result

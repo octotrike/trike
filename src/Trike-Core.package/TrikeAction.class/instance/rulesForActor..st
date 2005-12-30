@@ -16,4 +16,4 @@ rulesForActor: anActor
 		ifFalse: [
 			asset inScope 
 				ifTrue: [#unknown]
-				ifFalse: [#never]]
+				ifFalse: [#sometimes]]

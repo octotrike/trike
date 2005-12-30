@@ -15,4 +15,8 @@ registerForSelfEvents
 		
 		when: #noAttack:
 		send: #passUpNoAttack:
+		to: self;
+
+		when: #knownActor:
+		send: #applyRuleToActor:
 		to: self
