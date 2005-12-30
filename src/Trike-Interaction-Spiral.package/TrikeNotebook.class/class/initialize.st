@@ -4,8 +4,5 @@ initialize
 
 	super initialize.
 
-	"The default is true because when people load Trike via SqueakMap, it will be true.  The build script toggles this."
+	"The default is true because when people load Trike via SqueakMap, it will be true.  TrikeBuilder toggles this for the released image."
 	ProgrammerFacilities := true.
-
-	"The default is false because when people load Trike via SqueakMap, it will be false.  The dev build script toggles this."
-	DevelopmentVersion := false
