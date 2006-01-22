@@ -3,4 +3,4 @@ initialize
 	"Set my initial state."
 	super initialize.
 	children := OrderedCollection new.
-	parents := Set new.
+	parents := WeakSet new.

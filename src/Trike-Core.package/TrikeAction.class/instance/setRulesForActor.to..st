@@ -1,10 +1,10 @@
 accessing
 setRulesForActor: anActor to: possibilitySymbol 
-	"Fix up my rule and knownActors such that the given  
+	"Fix up my rule and knownActors such that the given 
 	possibilitySymbol is answered for queries about anActor."
-	"The rules for actions on out of scope assets cannot be  
+	"The rules for actions on out of scope assets cannot be 
 	changed."
-	"If this possibilitySymbol would already be answered, nothing  
+	"If this possibilitySymbol would already be answered, nothing 
 	needs to be changed."
 	(asset inScope not
 			or: [possibilitySymbol
@@ -16,6 +16,7 @@ setRulesForActor: anActor to: possibilitySymbol
 	(#(#never #sometimes #always ) includes: possibilitySymbol)
 		ifTrue: [knownActors add: anActor].
 	"Fix up my rule."
+	TmpFnord ifTrue: [self halt].
 	(#(#unknown #never ) includes: possibilitySymbol)
 		ifTrue: [self disallowFor: anActor]
 		ifFalse: [| newRule | 
