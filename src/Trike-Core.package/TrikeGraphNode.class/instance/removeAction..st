@@ -1,7 +1,7 @@
 event handling
 removeAction: child 
 	^ GenericAction
-		label: 'remove selected ', child label
+		label: 'Remove Selected ' , child label
 		receiver: self
 		selector: #removeChild:
 		arguments: {child}

@@ -7,5 +7,4 @@ equivalentRule
 	1
 		to: atomicTerms size
 		do: [:power | self groupCodesToPower: power].
-	TmpFnord ifTrue: [self halt].
 	^ self ruleFromCodeCombinations

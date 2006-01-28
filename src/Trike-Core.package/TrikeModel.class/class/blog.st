@@ -1,9 +1,9 @@
 examples
 blog
-	"Answer an instance of me which contains a threat model of  
+	"Answer an instance of me which contains a threat model of 
 	Blog 1.0."
 	| result anonymous user admin account blog entry child rule externalAsset |
-	result := self named: 'blog'.
+	result := self named: 'Blog'.
 	"Actors"
 	anonymous := TrikeActor named: 'Anonymous' in: result.
 	anonymous notes: 'Any user on the Internet.  Anonymous people are completely untrusted.';

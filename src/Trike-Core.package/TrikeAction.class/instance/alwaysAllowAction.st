@@ -1,7 +1,7 @@
 event handling
 alwaysAllowAction
 	^ GenericAction
-		label: 'always allow ', self label
+		label: 'Always Allow ' , self label
 		receiver: self
 		selector: #alwaysAllow
 		arguments: #()
