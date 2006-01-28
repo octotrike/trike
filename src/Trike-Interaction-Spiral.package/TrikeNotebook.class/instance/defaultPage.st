@@ -1,3 +1,4 @@
 defaults
 defaultPage
-	^(self pageNamed: 'blog') ifNil: [self pageNamed: 'about']
+	^ (self pageNamed: 'Blog')
+		ifNil: [self pageNamed: 'About']

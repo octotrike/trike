@@ -1,6 +1,6 @@
 event handling
 gridEditingAction
-	^GenericActions
-		label: 'edit grid'
+	^ GenericActions
+		label: 'Edit Grid'
 		receiver: self
 		selector: #gridEditingActions

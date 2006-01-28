@@ -1,18 +1,19 @@
 event handling
 behaviorPreferencesActions
-	"Answer an OrderedCollection containing all behavior preferences  
+	"Answer an OrderedCollection containing all behavior
+	preferences 
 	actions my instances support."
 	| result operation |
 	result := OrderedCollection new.
 	operation := ToggleAction
-				label: 'balloon help'
+				label: 'Balloon Help'
 				receiver: Preferences
 				selector: #togglePreference:
-				arguments: #(#balloonHelpEnabled).
+				arguments: #(#balloonHelpEnabled ).
 	operation getStateSelector: #balloonHelpEnabled.
 	result add: operation.
 	operation := ToggleAction
-				label: 'programmer facilities'
+				label: 'Programmer Facilities'
 				receiver: self class
 				selector: #toggleProgrammerFacilities
 				arguments: #().

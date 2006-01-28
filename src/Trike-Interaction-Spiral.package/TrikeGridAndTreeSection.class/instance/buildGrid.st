@@ -6,7 +6,7 @@ buildGrid
 	colorKey := grid colorKeyMorph.
 	colorKey fullBounds; beSticky.
 	self addPage.
-	currentPage setNameTo: 'grid';
+	currentPage setNameTo: 'Grid';
 		 dropEnabled: false;
 		
 		addMorph: grid

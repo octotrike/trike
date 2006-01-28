@@ -1,7 +1,7 @@
 event handling
 itemEditingAction: aComponent 
 	^ GenericActions
-		label: 'edit item'
+		label: 'Edit Item'
 		receiver: self
 		selector: #itemEditingActions:
 		arguments: {aComponent}

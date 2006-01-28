@@ -1,3 +1,3 @@
 defaults
 defaultNameStemForInstances
-	^ 'model'
+	^ 'Model'

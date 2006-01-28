@@ -9,9 +9,9 @@ buildTree
 				menu: #addTreeMenuItems:
 				keystroke: nil.
 	tree borderWidth: 0;
-		 setNameTo: self defaultName , ' tree'.
+		 setNameTo: self defaultName , ' Tree'.
 	self addPage.
-	currentPage setNameTo: 'tree';
+	currentPage setNameTo: 'Tree';
 		 dropEnabled: false;
 		
 		addMorph: tree

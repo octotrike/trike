@@ -1,3 +1,3 @@
 defaults
 defaultPageName
-	^'system'
+	^ 'System'
