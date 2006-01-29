@@ -1,7 +1,7 @@
 event handling
 neverAllowAction
 	^ GenericAction
-		label: 'Disallow ' , self label
+		label: 'disallow ' , self label
 		receiver: self
 		selector: #neverAllow
 		arguments: #()

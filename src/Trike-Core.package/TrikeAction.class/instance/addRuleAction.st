@@ -2,9 +2,9 @@ event handling
 addRuleAction
 	^ GenericActions
 		label: (rule
-				ifNil: ['Only']
-				ifNotNil: ['Also'])
-				, ' Allow ' , self label , ' When'
+				ifNil: ['only']
+				ifNotNil: ['also'])
+				, ' allow ' , self label , ' when'
 		receiver: self baseNodeClass
 		selector: #addNodesAction:
 		arguments: {self}

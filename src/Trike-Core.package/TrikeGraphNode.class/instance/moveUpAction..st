@@ -1,8 +1,9 @@
 event handling
 moveUpAction: child 
 	^ children first == child
+		ifTrue: [nil]
 		ifFalse: [GenericAction
-				label: 'Reorder Selected ' , child label , ' Up'
-				receiver: self
-				selector: #moveChildUp:
-				arguments: {child}]
+					label: 'reorder selected ', child label, ' up'
+					receiver: self
+					selector: #moveChildUp:
+					arguments: {child}]

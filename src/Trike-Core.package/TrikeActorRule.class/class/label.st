@@ -1,4 +1,4 @@
 accessing
 label
 	"Answer a String containing a human-readable label for me."
-	^ 'Is In Role'
+	^'is in role'

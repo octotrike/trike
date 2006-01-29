@@ -1,11 +1,11 @@
 event handling
 removeAction: child 
 	| selector |
-	child == rule
+	child == rule 
 		ifTrue: [selector := #removeRule:]
-		ifFalse: [self error: 'No such child'].
+		ifFalse: [self error: 'no such child'].
 	^ GenericAction
-		label: 'Remove Selected ' , child label
+		label: 'remove selected ', child label
 		receiver: self
 		selector: selector
 		arguments: {child}
