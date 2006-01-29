@@ -1,6 +1,6 @@
 event handling
 itemEditingAction
-	^GenericActions
-		label: 'edit item'
+	^ GenericActions
+		label: 'Edit Item'
 		receiver: self
 		selector: #itemEditingActions
