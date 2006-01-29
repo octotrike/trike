@@ -5,6 +5,6 @@ testAssetNameNameTrigger
 		send: #receiveEvent:
 		to: self
 		with: #name.
-	cleartext name: 'unencrypted message'.
+	cleartext name: 'Unencrypted message'.
 	self
 		should: [receivedEvents includes: #name]

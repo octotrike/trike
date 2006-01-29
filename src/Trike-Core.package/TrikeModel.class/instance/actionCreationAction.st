@@ -1,10 +1,10 @@
 event handling
 actionCreationAction
-	"Answer a GenericActions to act as a handle for all action  
+	"Answer a GenericActions to act as a handle for all action 
 	creation operations my instances support."
 	| result |
 	result := GenericActions
-				label: 'add intended action on'
+				label: 'Add Intended Action On'
 				receiver: self
 				selector: #actionCreationActions
 				arguments: #().

@@ -1,4 +1,4 @@
 initialization
 initializeToStandAlone
 	"Set my initial state."
-	self name: 'do something devious'
+	self name: 'Do something devious'

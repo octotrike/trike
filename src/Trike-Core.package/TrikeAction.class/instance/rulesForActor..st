@@ -1,19 +1,15 @@
 accessing
-rulesForActor: anActor
-
-	^(knownActors includes: anActor) 
-		ifTrue: [
-			intended 
-				ifTrue: [
-					rule
-						ifNil: [#always]
-						ifNotNil: [ | result |
+rulesForActor: anActor 
+	^ (knownActors includes: anActor)
+		ifTrue: [intended
+				ifTrue: [rule
+						ifNil: [#Always]
+						ifNotNil: [| result | 
 							result := rule selectForActor: anActor.
-							(#(#always #never) includes: result)
+							(#(#Always #Never ) includes: result)
 								ifTrue: [result]
-								ifFalse: [#sometimes]]]
-				ifFalse: [#never]]
-		ifFalse: [
-			asset inScope 
-				ifTrue: [#unknown]
-				ifFalse: [#sometimes]]
+								ifFalse: [#Sometimes]]]
+				ifFalse: [#Never]]
+		ifFalse: [asset inScope
+				ifTrue: [#Unknown]
+				ifFalse: [#Sometimes]]

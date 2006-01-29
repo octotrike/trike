@@ -15,7 +15,7 @@ testSingleParentAgainRuleTrigger
 		with: #rule2.
 	or2 removeRule: moonIsFull.
 	self clearReceivedEvents.
-	moonIsFull name: 'the moon is less than half empty'.
+	moonIsFull name: 'The moon is less than half empty'.
 	self
 		should: [receivedEvents includes: #rule1];
 		

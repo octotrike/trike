@@ -1,6 +1,6 @@
 event handling
 testNoNameTrigger
-	"When you attempt to change the name of an action  
+	"When you attempt to change the name of an action 
 	directly, no #name event should be triggered."
 	createCleartext
 		when: #name
@@ -8,7 +8,7 @@ testNoNameTrigger
 		to: self
 		with: #name.
 	self
-		should: [createCleartext name: 'decrypt that puppy']
+		should: [createCleartext name: 'Decrypt that puppy']
 		raise: Error;
 		
 		shouldnt: [receivedEvents includes: #name]

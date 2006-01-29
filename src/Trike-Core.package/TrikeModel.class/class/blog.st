@@ -1,9 +1,9 @@
 examples
 blog
-	"Answer an instance of me which contains a threat model of  
+	"Answer an instance of me which contains a threat model of 
 	Blog 1.0."
 	| result anonymous user admin account blog entry child rule externalAsset |
-	result := self named: 'blog'.
+	result := self named: 'Blog'.
 	"Actors"
 	anonymous := TrikeActor named: 'Anonymous' in: result.
 	anonymous notes: 'Any user on the Internet.  Anonymous people are completely untrusted.';
@@ -31,39 +31,39 @@ blog
 				do: [:action | action applyRuleToAllActors]].
 	"Intended actions"
 	rule := TrikeAndRule withSimplifiedChildren: {TrikeActorRule actor: anonymous. TrikeTextRule named: 'It is possible to determine later which source IP address created this User Account'. TrikeTextRule named: 'It is possible to determine later when this User Account was created'}.
-	(account actionAt: #create) rule: rule;
+	(account actionAt: #Create) rule: rule;
 		 intended: true.
 	child := TrikeAndRule withSimplifiedChildren: {TrikeActorRule actor: user. TrikeTextRule named: 'It is Actor''s own User Account'}.
 	rule := TrikeOrRule withSimplifiedChildren: {TrikeActorRule actor: admin. child}.
-	(account actionAt: #read) rule: rule;
+	(account actionAt: #Read) rule: rule;
 		 intended: true.
 	child := TrikeOrRule withSimplifiedChildren: {TrikeActorRule actor: user. TrikeActorRule actor: admin}.
 	rule := TrikeAndRule withSimplifiedChildren: {child. TrikeTextRule named: 'It is Actor''s own User Account'}.
-	(account actionAt: #update) rule: rule;
+	(account actionAt: #Update) rule: rule;
 		 intended: true.
 	rule := TrikeAndRule withSimplifiedChildren: {TrikeActorRule actor: admin. TrikeTextRule named: 'Associated Blog, if any, is also legally deleted'}.
-	(account actionAt: #delete) rule: rule;
+	(account actionAt: #Delete) rule: rule;
 		 intended: true.
 	rule := TrikeAndRule withSimplifiedChildren: {TrikeActorRule actor: admin. TrikeTextRule named: 'One Blog per User Account'}.
-	(blog actionAt: #create) rule: rule;
+	(blog actionAt: #Create) rule: rule;
 		 intended: true.
-	(blog actionAt: #read) rule: nil;
+	(blog actionAt: #Read) rule: nil;
 		 intended: true.
 	child := TrikeOrRule withSimplifiedChildren: {TrikeActorRule actor: user. TrikeActorRule actor: admin}.
 	rule := TrikeAndRule withSimplifiedChildren: {child. TrikeTextRule named: 'Actor is legally adding a Blog Entry'}.
-	(blog actionAt: #update) rule: rule;
+	(blog actionAt: #Update) rule: rule;
 		 intended: true.
 	rule := TrikeAndRule withSimplifiedChildren: {TrikeActorRule actor: admin. TrikeTextRule named: 'Associated Blog Entries are also deleted'. TrikeTextRule named: 'Associated User Account is also deleted'. TrikeTextRule named: 'It is possible to determine later which Admin deleted this Blog'. TrikeTextRule named: 'It is possible to determine later when this Blog was deleted'. TrikeTextRule named: 'Admin must select a reason'}.
-	(blog actionAt: #delete) rule: rule;
+	(blog actionAt: #Delete) rule: rule;
 		 intended: true.
 	child := TrikeOrRule withSimplifiedChildren: {TrikeActorRule actor: user. TrikeActorRule actor: admin}.
 	rule := TrikeAndRule withSimplifiedChildren: {child. TrikeTextRule named: 'One new Blog Entry per day'. TrikeTextRule named: 'Blog Entry is created in Actor''s own Blog'}.
-	(entry actionAt: #create) rule: rule;
+	(entry actionAt: #Create) rule: rule;
 		 intended: true.
-	(entry actionAt: #read) rule: nil;
+	(entry actionAt: #Read) rule: nil;
 		 intended: true.
 	rule := TrikeAndRule withSimplifiedChildren: {TrikeTextRule named: 'Blog is being deleted'. TrikeActorRule actor: admin}.
-	(entry actionAt: #delete) rule: rule;
+	(entry actionAt: #Delete) rule: rule;
 		 intended: true.
 	"Threat-specific risk"
 	externalAsset attacks

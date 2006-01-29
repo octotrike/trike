@@ -5,6 +5,6 @@ testNameTrigger
 		send: #receiveEvent:
 		to: self
 		with: #name.
-	cleartext name: 'unencrypted message'.
+	cleartext name: 'Unencrypted Message'.
 	self
 		should: [receivedEvents includes: #name]

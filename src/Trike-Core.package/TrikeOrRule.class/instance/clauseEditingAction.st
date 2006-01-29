@@ -1,8 +1,8 @@
 event handling
 clauseEditingAction
 	"Answer a GenericAction for editing my clause."
-	^GenericAction
-		label: 'change OR to AND'
+	^ GenericAction
+		label: 'Change OR to AND'
 		receiver: self
 		selector: #becomeAnd
 		arguments: #()

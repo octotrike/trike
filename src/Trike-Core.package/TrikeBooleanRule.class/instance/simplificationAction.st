@@ -1,7 +1,7 @@
 event handling
 simplificationAction
 	^ GenericAction
-		label: 'simplify selected rule'
+		label: 'Simplify Selected Rule'
 		receiver: self
 		selector: #simplify
 		arguments: #()

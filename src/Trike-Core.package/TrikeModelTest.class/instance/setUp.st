@@ -1,14 +1,13 @@
 set up
 setUp
 	"Prepare my test fixture."
-	
 	super setUp.
-	model := TrikeModel named: 'model test'.
+	model := TrikeModel named: 'Model Test'.
 	alice := TrikeActor named: 'Alice' in: model.
 	cleartext := TrikeAsset named: 'Cleartext' in: model.
-	createCleartext := cleartext actionAt: #create.
+	createCleartext := cleartext actionAt: #Create.
 	createCleartext
 		rule: (TrikeActorRule actor: alice);
 		 intended: true.
-	spoofAlice := TrikeAttack named: 'pretend to be Alice'.
+	spoofAlice := TrikeAttack named: 'Pretend to be Alice'.
 	self clearReceivedEvents

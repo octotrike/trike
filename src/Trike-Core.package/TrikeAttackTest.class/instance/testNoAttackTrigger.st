@@ -6,10 +6,10 @@ testNoAttackTrigger
 		when: #noAttack:
 		send: #receiveEvent:
 		to: self.
-	bruteForce := TrikeAttack named: 'brute force the session key'.
-	decryptCiphertext
-		addAttack: bruteForce;
-		removeAttack: bruteForce.
+	bruteForce := TrikeAttack named: 'Brute force the session key'.
+	decryptCiphertext addAttack: bruteForce;
+		 removeAttack: bruteForce.
 	self
 		should: [receivedEvents includes: bruteForce];
+		
 		should: [receivedEvents size = 1]

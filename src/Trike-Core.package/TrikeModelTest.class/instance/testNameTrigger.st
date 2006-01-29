@@ -1,6 +1,10 @@
 event handling
 testNameTrigger
-	model when: #name send: #receiveEvent: to: self with: #name.
-	model name: 'random name'.
-	self should: [receivedEvents includes: #name]
-	
+	model
+		when: #name
+		send: #receiveEvent:
+		to: self
+		with: #name.
+	model name: 'Random Name'.
+	self
+		should: [receivedEvents includes: #name]
