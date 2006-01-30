@@ -1,7 +1,9 @@
 converting
 ruleFromCodeCombinations
-	"Six:Output results by displaying the terms for the minterms that  
-	weren't joined into higher order groupings, groupings of two cells,  
+	"Six:Output results by displaying the terms for the minterms
+	that 
+	weren't joined into higher order groupings, groupings of two
+	cells, 
 	groupings of four cells, . . . until all the terms are displayed."
 	| terms |
 	self needsWork.
@@ -13,7 +15,7 @@ ruleFromCodeCombinations
 		do: [:power | (codeCombinations at: power)
 				do: [:code | terms add: code equivalentRule]].
 	terms
-		ifEmpty: [^ #never].
+		ifEmpty: [^ #Never].
 	terms size = 1
 		ifTrue: [^ terms only].
 	^ TrikeOrRule withSimplifiedChildren: terms

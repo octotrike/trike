@@ -1,6 +1,4 @@
 accessing
 children
-	"Temporary method to debug graph inconsistency."
-	self needsWork.
-	^OrderedCollection with: rule
-		
+	"Answer my child rules.  This somewhat hackish method is required by TrikeGraphNode>>postCopy because Rules have Actions as parents."
+	^ OrderedCollection with: rule

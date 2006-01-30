@@ -5,5 +5,5 @@ fillTruthTable: result
 		do: [:child | 
 			| tableToMerge | 
 			tableToMerge := child truthTable.
-			result absorb: #never from: tableToMerge].
-	result atAllOthersPut: #always
+			result absorb: #Never from: tableToMerge].
+	result atAllOthersPut: #Always
