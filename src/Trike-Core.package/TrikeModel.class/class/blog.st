@@ -2,7 +2,7 @@ examples
 blog
 	"Answer an instance of me which contains a threat model of 
 	Blog 1.0."
-	| result anonymous user admin account blog entry child rule externalAsset |
+	| result anonymous user admin account blog entry child rule externalAsset tmpAttack tmpAction |
 	result := self named: 'Blog'.
 	"Actors"
 	anonymous := TrikeActor named: 'Anonymous' in: result.
@@ -66,6 +66,82 @@ blog
 	(entry actionAt: #Delete) rule: rule;
 		 intended: true.
 	"Threat-specific risk"
-	externalAsset attacks
-		do: [:attack | attack riskFactor: 5].
+	"externalAsset"
+	tmpAction := externalAsset actionAt: #Create.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := externalAsset actionAt: #Read.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := externalAsset actionAt: #Update.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := externalAsset actionAt: #Delete.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	"account"
+	tmpAction := account actionAt: #Create.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 1.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 2.
+	tmpAction := account actionAt: #Read.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 1.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := account actionAt: #Update.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 4.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 4.
+	tmpAction := account actionAt: #Delete.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 2.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 3.
+	"blog"
+	tmpAction := blog actionAt: #Create.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 2.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := blog actionAt: #Read.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 1.
+	tmpAction := blog actionAt: #Update.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := blog actionAt: #Delete.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 4.
+	"entry"
+	tmpAction := entry actionAt: #Create.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 2.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := entry actionAt: #Read.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 1.
+	tmpAction := entry actionAt: #Update.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 5.
+	tmpAction := entry actionAt: #Delete.
+	tmpAttack := tmpAction attackAt: TrikeDenialOfServiceThreat.
+	tmpAttack riskFactor: 3.
+	tmpAttack := tmpAction attackAt: TrikeElevationOfPrivilegeThreat.
+	tmpAttack riskFactor: 4.
 	^ result

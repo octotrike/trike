@@ -6,11 +6,9 @@ convertToNativeXML
 	attackElement attributeAt: 'type' put: 'root';
 		 attributeAt: 'target' put: 'action';
 		 attributeAt: 'goal' put: 'less';
-		 attributeAt: 'id' put: self id;
-		attributeAt: 'exposure' put: self exposure;
+		 attributeAt: 'id' put: self id asString;
+		 attributeAt: 'exposure' put: self exposure asString;
 		 attributeAt: 'name' put: self name.
-	attackElement addElement: XMLElement new;
-		 name: 'notes';
-		 addContent: self notes.
+	attackElement addElement: self notesAsNativeXML.
 	attackElement addElement: self childrenAsNativeXML.
 	^ attackElement

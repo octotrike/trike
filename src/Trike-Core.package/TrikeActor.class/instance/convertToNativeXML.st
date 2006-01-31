@@ -4,9 +4,7 @@ convertToNativeXML
 	actorElement := XMLElement new.
 	actorElement name: 'asset'.
 	actorElement attributeAt: 'name' put: self name;
-		 attributeAt: 'id' put: self id;
-		 attributeAt: 'risk' put: self risk.
-	actorElement addElement: XMLElement new;
-		 name: 'notes';
-		 addContent: self notes.
+		 attributeAt: 'id' put: self id asString;
+		 attributeAt: 'risk' put: self risk asString.
+	actorElement addElement: self notesAsNativeXML.
 	^ actorElement

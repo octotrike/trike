@@ -3,5 +3,5 @@ nativeAttacksXML
 	| attacksXML |
 	attacksXML := XMLElement named: 'attacks'.
 	self attacks
-		nodesDo: [:attack | attacksXML addElement: attack convertToNativeXML].
+		do: [:attack | attack nodesDo: [:att | attacksXML addElement: att convertToNativeXML]].
 	^ attacksXML
