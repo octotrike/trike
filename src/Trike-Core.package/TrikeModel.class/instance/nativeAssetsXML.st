@@ -1,3 +1,7 @@
 conversion
 nativeAssetsXML
-	self shouldBeImplemented
+	| assetsXML |
+	assetsXML := XMLElement named: 'assets'.
+	self assets
+		do: [:asset | assetsXML addElement: asset convertToNativeXML].
+	^ assetsXML

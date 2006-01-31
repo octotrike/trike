@@ -1,0 +1,3 @@
+conversion
+childrenAsNativeXML
+	self subclassResponsibility
