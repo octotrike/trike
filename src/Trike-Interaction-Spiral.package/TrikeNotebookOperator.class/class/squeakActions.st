@@ -5,6 +5,13 @@ squeakActions
 	| result operator |
 	result := OrderedCollection new.
 	operator := GenericAction
+				label: 'Save'
+				receiver: SmalltalkImage current
+				selector: #snapshot:andQuit:
+				arguments: {true. false}.
+	operator description: 'Save the Man!'.
+	result add: operator.
+	operator := GenericAction
 				label: 'Quit!'
 				receiver: SmalltalkImage current
 				selector: #snapshot:andQuit:

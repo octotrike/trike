@@ -6,6 +6,6 @@ currentState: riskValue
 				ifNotNil: [self error: 'No such state']].
 	threat
 		ifNotNil: [| newValue | 
-			newValue := (#(#'N/A' #unknown ) includes: riskValue)
+			newValue := (#(#'N/A' #Unknown ) includes: riskValue)
 						ifFalse: [riskValue].
 			threat riskFactor: newValue]
