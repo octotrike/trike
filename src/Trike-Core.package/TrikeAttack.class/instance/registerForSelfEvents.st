@@ -8,6 +8,15 @@ registerForSelfEvents
 		to: self
 		with: #attacks;
 
+		when: #name
+		send: #triggerEvent:
+		to: self
+		with: #attacks;
+
 		when: #anAttack:
 		send: #passUpAnAttack:
+		to: self;
+
+		when: #noAttack:
+		send: #passUpNoAttack:
 		to: self

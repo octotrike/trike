@@ -9,8 +9,7 @@
 		"name",
 		"assets",
 		"actors",
-		"dirty",
-		"intendedActions"
+		"dirty"
 	],
 	"name" : "TrikeModel",
 	"type" : "normal"

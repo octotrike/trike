@@ -10,7 +10,7 @@ convertToNativeXML
 		 name: 'notes';
 		 addContent: self notes.
 	actionElement addElement: self asset referenceAsNativeXML.
-	knownActorsElement := XMLElement new; name: 'knownActors'.
+	knownActorsElement := XMLElement new name: 'knownActors'.
 	self knownActors
 		do: [:actor | knownActorsElement addElement: actor referenceAsNativeXML].
 	actionElement addElement: knownActorsElement.
