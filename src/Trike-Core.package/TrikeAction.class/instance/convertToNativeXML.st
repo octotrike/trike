@@ -1,6 +1,6 @@
 conversion
 convertToNativeXML
-	| actionElement knownActorsElement risksElement lessRisk moreRisk dosThreat elvThreat |
+	| actionElement knownActorsElement risksElement lessRisk moreRisk dosThreat elvThreat riskFactorElement |
 	actionElement := XMLElement new.
 	actionElement name: 'action'.
 	actionElement attributeAt: 'verb' put: self action;
@@ -22,16 +22,18 @@ convertToNativeXML
 	elvThreat := self attackAt: TrikeElevationOfPrivilegeThreat.
 	dosThreat
 		ifNotNil: [lessRisk := dosThreat riskFactor].
-	dosThreat := self attackAt: TrikeDenialOfServiceThreat.
 	elvThreat
 		ifNotNil: [moreRisk := elvThreat riskFactor].
-	risksElement addElement: XMLElement new;
-		 name: 'risk';
+	riskFactorElement := XMLElement new.
+	riskFactorElement name: 'risk';
 		 attributeAt: 'goal' put: 'less';
 		 attributeAt: 'value' put: lessRisk asString.
-	risksElement addElement: XMLElement new;
-		 name: 'risk';
+	risksElement addElement: riskFactorElement.
+	riskFactorElement := XMLElement new.
+	riskFactorElement name: 'risk';
 		 attributeAt: 'goal' put: 'more';
 		 attributeAt: 'value' put: moreRisk asString.
+	risksElement addElement: riskFactorElement.
+
 	actionElement addElement: risksElement.
 	^ actionElement

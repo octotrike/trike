@@ -1,7 +1,11 @@
 conversion
 childrenAsNativeXML
-	| childrenElement |
+	| childrenElement childElement |
 	childrenElement := XMLElement new.
+	childrenElement name: 'children'.
 	self hasChildren
 		ifTrue: [self children
-				do: [:child | childrenElement addElement: child referenceAsNativeXML]]
+				do: [:child | 
+					childElement := child referenceAsNativeXML.
+					childrenElement addElement: childElement]].
+	^ childrenElement
