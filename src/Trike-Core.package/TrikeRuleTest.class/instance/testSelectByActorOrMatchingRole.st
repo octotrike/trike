@@ -5,4 +5,4 @@ testSelectByActorOrMatchingRole
 	or1 := moonIsFull \/ isStudent.
 	result := or1 selectForActor: student.
 	self
-		should: [result = #always]
+		should: [result = #Always]

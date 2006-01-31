@@ -3,4 +3,4 @@ testSelectByActorUnmatchingRole
 	| result |
 	result := isStudent selectForActor: wizard.
 	self
-		should: [result = #never]
+		should: [result = #Never]

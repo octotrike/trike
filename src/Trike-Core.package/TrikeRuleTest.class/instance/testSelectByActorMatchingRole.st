@@ -3,4 +3,4 @@ testSelectByActorMatchingRole
 	| result |
 	result := isStudent selectForActor: student.
 	self
-		should: [result = #always]
+		should: [result = #Always]

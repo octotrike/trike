@@ -3,4 +3,4 @@ testAndOpposites
 	| result |
 	result := moonIsFull /\ moonIsNotFull.
 	self
-		should: [result = #never].
+		should: [result = #Never]
