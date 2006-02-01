@@ -1,3 +1,8 @@
 event handling
 save
-	self needsWork
+	| fileStream xmlDocument |
+	(fileStream := StandardFileMenu newFileStream)
+		ifNotNil: [
+			xmlDocument := model convertToNativeXML.
+			xmlDocument printOn: fileStream.
+			fileStream close]
