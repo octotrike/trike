@@ -6,7 +6,7 @@ testAnAttackTrigger
 		when: #anAttack:
 		send: #receiveEvent:
 		to: self.
-	bruteForce := TrikeAttack named: 'Brute force the session key'.
+	bruteForce := TrikeOrAttack named: 'Brute force the session key'.
 	decryptCiphertext addAttack: bruteForce.
 	self
 		should: [receivedEvents includes: bruteForce];

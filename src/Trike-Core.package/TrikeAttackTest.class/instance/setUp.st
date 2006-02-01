@@ -1,7 +1,6 @@
 set up
 setUp
 	"Prepare my test fixture."
-	| model |
 	super setUp.
 	model := TrikeModel named: 'Attack Test'.
 	alice := TrikeActor named: 'Alice' in: model.
@@ -16,6 +15,6 @@ setUp
 	createCleartext
 		rule: (TrikeActorRule actor: alice);
 		 intended: true.
-	sniffCiphertext := TrikeAttack named: 'Sniff the ciphertext off the wire'.
-	decryptCiphertext := TrikeAttack named: 'Decrypt the ciphertext'.
+	sniffCiphertext := TrikeOrAttack named: 'Sniff the ciphertext off the wire'.
+	decryptCiphertext := TrikeOrAttack named: 'Decrypt the ciphertext'.
 	self clearReceivedEvents

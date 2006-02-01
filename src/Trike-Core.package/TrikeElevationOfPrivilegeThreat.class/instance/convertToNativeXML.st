@@ -2,7 +2,7 @@ conversion
 convertToNativeXML
 	| attackElement |
 	attackElement := XMLElement new.
-	attackElement name: 'rule'.
+	attackElement name: 'attack'.
 	attackElement attributeAt: 'type' put: 'root';
 		 attributeAt: 'target' put: 'action';
 		 attributeAt: 'goal' put: 'more';

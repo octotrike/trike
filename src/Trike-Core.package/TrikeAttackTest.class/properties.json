@@ -13,7 +13,8 @@
 		"decryptCiphertext",
 		"receivedEvents",
 		"createCleartext",
-		"timestamp"
+		"timestamp",
+		"model"
 	],
 	"name" : "TrikeAttackTest",
 	"type" : "normal"

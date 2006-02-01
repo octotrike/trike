@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "TrikeAttack",
+	"super" : "TrikeBooleanAttack",
 	"category" : "Trike-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

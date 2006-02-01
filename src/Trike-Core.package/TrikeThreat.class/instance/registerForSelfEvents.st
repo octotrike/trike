@@ -12,4 +12,8 @@ registerForSelfEvents
 		when: #riskFactor
 		send: #triggerEvent:
 		to: self
-		with: #exposure
+		with: #exposure;
+
+		when: #attacks
+		send: #attacksChanged
+		to: self

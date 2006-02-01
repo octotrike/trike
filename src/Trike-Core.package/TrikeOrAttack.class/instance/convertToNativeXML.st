@@ -2,8 +2,8 @@ conversion
 convertToNativeXML
 	| attackElement |
 	attackElement := XMLElement new.
-	attackElement name: 'rule'.
-	attackElement attributeAt: 'type' put: 'or';
+	attackElement name: 'attack'.
+	attackElement attributeAt: 'type' put: 'OR';
 		 attributeAt: 'id' put: self id asString;
 		 attributeAt: 'name' put: self name.
 	attackElement addElement: self notesAsNativeXML.

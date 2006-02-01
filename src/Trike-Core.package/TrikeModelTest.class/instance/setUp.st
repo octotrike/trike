@@ -9,5 +9,5 @@ setUp
 	createCleartext
 		rule: (TrikeActorRule actor: alice);
 		 intended: true.
-	spoofAlice := TrikeAttack named: 'Pretend to be Alice'.
+	spoofAlice := TrikeTextAttack named: 'Pretend to be Alice'.
 	self clearReceivedEvents
