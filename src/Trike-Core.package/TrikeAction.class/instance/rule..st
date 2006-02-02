@@ -4,10 +4,11 @@ rule: aRule
 	occur.  If aRule is non-nil, also set intended: true, because it is
 	meaningless to apply rules to unintended actions."
 
+	aRule = #Never ifTrue: [^self intended: false].
 	rule = aRule 
 		ifFalse: [
 			rule ifNotNil: [rule removeParent: self].
-			rule := aRule.
+			rule := aRule isSymbol ifFalse: [aRule].
 			rule ifNil: [
 					intended 
 						ifTrue: [self removeThreatIfPresent: TrikeElevationOfPrivilegeThreat]]
