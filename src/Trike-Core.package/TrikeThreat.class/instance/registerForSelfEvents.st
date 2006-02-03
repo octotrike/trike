@@ -14,6 +14,10 @@ registerForSelfEvents
 		to: self
 		with: #exposure;
 
+		when: #exposure
+		send: #attacksChanged
+		to: self;
+
 		when: #attacks
 		send: #attacksChanged
 		to: self

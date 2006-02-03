@@ -6,7 +6,4 @@ replaceChild: oldNode with: newNode
 	children at: index put: newNode.
 	oldNode removeParent: self.
 	newNode addParent: self.
-	oldNode parents ifEmpty: [
-		oldNode children do: [:child |
-			child removeParent: oldNode]].
 	self triggerEvent: #children
