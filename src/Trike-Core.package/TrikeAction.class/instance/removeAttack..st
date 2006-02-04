@@ -4,4 +4,5 @@ removeAttack: anAttack
 	anAttack unregisterForActionEvents.
 	attacks remove: anAttack.
 	self triggerEvent: #noAttack: with: anAttack.
+	asset triggerEvent: #noAttack: with: anAttack.
 	model triggerEvent: #noAttack: with: anAttack
