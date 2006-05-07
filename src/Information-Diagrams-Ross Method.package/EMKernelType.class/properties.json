@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "BEL 5/7/2006 12:08",
+	"super" : "EMEntityType",
+	"category" : "Information-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"isProForma"
+	],
+	"name" : "EMKernelType",
+	"type" : "normal"
+}

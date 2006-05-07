@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "BEL 5/7/2006 00:28",
+	"super" : "EMObject",
+	"category" : "Information-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"model",
+		"objects",
+		"connections"
+	],
+	"name" : "EMZone",
+	"type" : "normal"
+}

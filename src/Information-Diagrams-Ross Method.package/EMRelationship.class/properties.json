@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "BEL 5/7/2006 12:13",
+	"super" : "EMConnection",
+	"category" : "Information-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"subject",
+		"object",
+		"passiveDesignation",
+		"subjectCardinality",
+		"objectCardinality",
+		"source"
+	],
+	"name" : "EMRelationship",
+	"type" : "normal"
+}
