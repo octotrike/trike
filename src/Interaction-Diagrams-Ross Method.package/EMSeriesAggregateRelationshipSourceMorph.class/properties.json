@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NCMultipleConnectorMorph",
+	"category" : "Interaction-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMSeriesAggregateRelationshipSourceMorph",
+	"type" : "normal"
+}

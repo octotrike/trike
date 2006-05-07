@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NCTextRectangleMorph",
+	"category" : "Interaction-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMAggregateObjectTypeMorph",
+	"type" : "normal"
+}

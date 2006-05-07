@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "BEL 5/7/2006 19:01",
+	"super" : "Object",
+	"category" : "Interaction-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"ModelToMorph"
+	],
+	"instvars" : [
+		"model",
+		"pasteUp",
+		"layoutBox",
+		"objectMorphs",
+		"connections",
+		"random"
+	],
+	"name" : "EMEntityModelDiagrammer",
+	"type" : "normal"
+}
