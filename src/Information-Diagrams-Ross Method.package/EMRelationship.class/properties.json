@@ -9,8 +9,10 @@
 		"subject",
 		"object",
 		"passiveDesignation",
-		"subjectCardinality",
-		"objectCardinality",
+		"subjectMinimum",
+		"subjectMaximum",
+		"objectMinimum",
+		"objectMaximum",
 		"source"
 	],
 	"name" : "EMRelationship",

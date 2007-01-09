@@ -1,4 +1,6 @@
 accessing
 addAttribute: anAttribute
 	"Add anAttribute to my set of attributes."
-	self shouldBeImplemented
+	
+	anAttribute anchor: self.
+	attributes at: anAttribute designation put: anAttribute
