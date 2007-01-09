@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "NCMultipleConnectorMorph",
+	"super" : "EMMultipleConnectorMorph",
 	"category" : "Interaction-Diagrams-Ross Method",
 	"classinstvars" : [ ],
 	"pools" : [ ],

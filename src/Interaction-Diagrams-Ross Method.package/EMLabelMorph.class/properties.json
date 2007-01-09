@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "NCSmartLabelMorph",
+	"category" : "Interaction-Diagrams-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"graphModel",
+		"labelSelector"
+	],
+	"name" : "EMLabelMorph",
+	"type" : "normal"
+}

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "NCAAConnectorMorph",
+	"super" : "EMConnectorMorph",
 	"category" : "Interaction-Diagrams-Ross Method",
 	"classinstvars" : [ ],
 	"pools" : [ ],

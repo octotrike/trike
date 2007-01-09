@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "NCSmartLabelMorph",
+	"super" : "EMLabelMorph",
 	"category" : "Interaction-Diagrams-Ross Method",
 	"classinstvars" : [ ],
 	"pools" : [ ],
