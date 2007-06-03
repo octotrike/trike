@@ -1,0 +1,3 @@
+logical stuff
+isLogical
+	^true
