@@ -1,0 +1,3 @@
+streaming
+asString
+	^ 'AND'

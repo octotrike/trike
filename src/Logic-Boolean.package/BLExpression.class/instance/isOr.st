@@ -1,0 +1,4 @@
+testing
+isOr
+
+	^false

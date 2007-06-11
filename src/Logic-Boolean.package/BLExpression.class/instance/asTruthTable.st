@@ -1,0 +1,4 @@
+converting
+asTruthTable
+	
+	self subclassResponsibility

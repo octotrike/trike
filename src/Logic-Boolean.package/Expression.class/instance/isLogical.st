@@ -1,3 +1,0 @@
-logical stuff
-isLogical
-	^true

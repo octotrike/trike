@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "BLExpression",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BLClause",
+	"type" : "normal"
+}

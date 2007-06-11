@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "BEL 5/28/2007 13:26",
+	"super" : "BLClause",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"children"
+	],
+	"name" : "BLCoordinator",
+	"type" : "normal"
+}

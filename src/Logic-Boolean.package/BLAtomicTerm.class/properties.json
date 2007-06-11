@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "BEL 5/27/2007 17:02",
+	"super" : "BLClause",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"atom",
+		"not"
+	],
+	"name" : "BLAtomicTerm",
+	"type" : "normal"
+}

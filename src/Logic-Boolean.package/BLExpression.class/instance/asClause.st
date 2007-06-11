@@ -1,0 +1,4 @@
+converting
+asClause
+	
+	self subclassResponsibility

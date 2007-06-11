@@ -1,0 +1,3 @@
+*Logic-Boolean
+isBooleanExpression
+	^false

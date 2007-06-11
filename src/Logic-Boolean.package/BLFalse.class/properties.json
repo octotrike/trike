@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "BEL 5/27/2007 17:02",
+	"super" : "BLAtomicTerm",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [
+		"instance"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BLFalse",
+	"type" : "normal"
+}

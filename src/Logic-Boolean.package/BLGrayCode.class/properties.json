@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "BEL 5/27/2007 17:03",
+	"super" : "BLExpression",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"truthTable",
+		"index",
+		"marked"
+	],
+	"name" : "BLGrayCode",
+	"type" : "normal"
+}

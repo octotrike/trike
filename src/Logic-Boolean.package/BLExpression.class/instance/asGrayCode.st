@@ -1,0 +1,4 @@
+converting
+asGrayCode
+	
+	self subclassResponsibility

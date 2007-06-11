@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "BEL 6/2/2007 17:32",
+	"super" : "TestCase",
+	"category" : "Logic-Boolean-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"a",
+		"b",
+		"c",
+		"d",
+		"notA",
+		"receivedEvents"
+	],
+	"name" : "BLTest",
+	"type" : "normal"
+}
