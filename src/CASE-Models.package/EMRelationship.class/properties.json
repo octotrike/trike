@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "BEL 5/7/2006 12:13",
+	"super" : "EMConnection",
+	"category" : "CASE-Models-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"subject",
+		"object",
+		"passiveDesignation",
+		"subjectMinimum",
+		"subjectMaximum",
+		"objectMinimum",
+		"objectMaximum",
+		"source"
+	],
+	"name" : "EMRelationship",
+	"type" : "normal"
+}

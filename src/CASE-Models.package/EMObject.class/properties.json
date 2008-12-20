@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CASE-Models-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"uuid",
+		"designation",
+		"description"
+	],
+	"name" : "EMObject",
+	"type" : "normal"
+}

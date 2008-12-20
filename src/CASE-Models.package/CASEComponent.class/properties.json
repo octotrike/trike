@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "BEL 11/26/2008 12:49",
+	"super" : "Model",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"label",
+		"parent",
+		"components",
+		"issues",
+		"requiresUniqueLabels",
+		"issueResolutionStrategy"
+	],
+	"name" : "CASEComponent",
+	"type" : "normal"
+}

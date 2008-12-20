@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "BEL 11/10/2008 16:17",
+	"super" : "CASEAutomaticIssue",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"label"
+	],
+	"name" : "CASEDuplicateLabelIssue",
+	"type" : "normal"
+}

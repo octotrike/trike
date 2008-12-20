@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "BEL 11/11/2008 19:10",
+	"super" : "Model",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"components",
+		"assignedTo",
+		"severity",
+		"isActive",
+		"history"
+	],
+	"name" : "CASEIssue",
+	"type" : "normal"
+}

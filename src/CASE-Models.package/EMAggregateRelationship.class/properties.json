@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "EMRelationship",
+	"category" : "CASE-Models-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMAggregateRelationship",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "BEL 5/17/2005 08:11",
+	"super" : "DataProcessor",
+	"category" : "CASE-Models-Data Flow",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DataFlowDiagram",
+	"type" : "normal"
+}

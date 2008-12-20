@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "BEL 5/7/2006 12:31",
+	"super" : "EMModel",
+	"category" : "CASE-Models-Ross Method",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"metaModel"
+	],
+	"name" : "EMEntityModel",
+	"type" : "normal"
+}
