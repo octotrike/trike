@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "EMLabelMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMRelationshipLabelMorph",
+	"type" : "normal"
+}

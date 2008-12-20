@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NCAAConnectorMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMConnectorMorph",
+	"type" : "normal"
+}

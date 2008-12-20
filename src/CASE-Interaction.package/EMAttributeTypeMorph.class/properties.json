@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "EMCircleMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMAttributeTypeMorph",
+	"type" : "normal"
+}

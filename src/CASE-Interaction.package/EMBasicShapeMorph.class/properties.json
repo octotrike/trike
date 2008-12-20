@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NCBasicShapeMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMBasicShapeMorph",
+	"type" : "normal"
+}

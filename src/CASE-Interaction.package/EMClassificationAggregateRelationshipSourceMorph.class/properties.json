@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "EMProFormaSourceMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMClassificationAggregateRelationshipSourceMorph",
+	"type" : "normal"
+}

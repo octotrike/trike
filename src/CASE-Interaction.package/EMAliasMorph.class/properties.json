@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "EMBasicShapeMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "EMAliasMorph",
+	"type" : "normal"
+}

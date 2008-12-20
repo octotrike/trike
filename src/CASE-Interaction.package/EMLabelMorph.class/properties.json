@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "NCSmartLabelMorph",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"graphModel",
+		"labelSelector"
+	],
+	"name" : "EMLabelMorph",
+	"type" : "normal"
+}

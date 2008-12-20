@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "BEL 5/7/2006 19:01",
+	"super" : "Object",
+	"category" : "CASE-Interaction-Entity Modeling",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"ModelToMorph"
+	],
+	"instvars" : [
+		"model",
+		"pasteUp",
+		"layoutBox",
+		"morphs",
+		"random"
+	],
+	"name" : "EMEntityModelDiagrammer",
+	"type" : "normal"
+}
