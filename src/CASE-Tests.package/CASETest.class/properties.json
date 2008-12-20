@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "CASE-Tests-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"receivedEvents",
+		"savedPreferences"
+	],
+	"name" : "CASETest",
+	"type" : "normal"
+}

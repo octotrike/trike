@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "CASE-Tests-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "RMTest",
+	"type" : "normal"
+}
