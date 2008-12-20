@@ -2,6 +2,8 @@ initialization
 initialize
 	"Set my initial state."
 	
+	"self initialize"
+	
 	super initialize.
 	Preferences 
 		addOrderPreference: #issueResolutionStrategy 
