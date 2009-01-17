@@ -1,14 +1,15 @@
 {
-	"commentStamp" : "BEL 7/21/2008 16:51",
+	"commentStamp" : "",
 	"super" : "TrikeComponent",
 	"category" : "Trike-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"startingPrivileges",
-		"providesPrivileges"
+		"planned",
+		"questions",
+		"result"
 	],
-	"name" : "TrikeActor",
+	"name" : "TrikeDecision",
 	"type" : "normal"
 }

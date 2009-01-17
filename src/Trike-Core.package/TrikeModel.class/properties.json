@@ -7,8 +7,10 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"name",
+		"securityObjectives",
 		"assets",
 		"actors",
+		"decisions",
 		"dirty"
 	],
 	"name" : "TrikeModel",
