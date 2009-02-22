@@ -1,4 +1,4 @@
-An instance of me represents something unknown or undecided, without which a Computer-Aided Systems Engineering model is ambiguous or complete, or an inconsistency between two or more parts of the model or the model and its parent model.
+An instance of me represents something unknown or undecided, without which a Computer-Aided Systems Engineering model is ambiguous or incomplete, or an inconsistency between two or more parts of the model or the model and its parent model.
 
 Instance Variables
 	assignedTo	the human who is responsible for resolving this issue

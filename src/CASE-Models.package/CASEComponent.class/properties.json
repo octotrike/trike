@@ -1,6 +1,6 @@
 {
-	"commentStamp" : "BEL 11/26/2008 12:49",
-	"super" : "Model",
+	"commentStamp" : "BEL 2/26/2009 21:35",
+	"super" : "Object",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -9,9 +9,7 @@
 		"label",
 		"parent",
 		"components",
-		"issues",
-		"requiresUniqueLabels",
-		"issueResolutionStrategy"
+		"implications"
 	],
 	"name" : "CASEComponent",
 	"type" : "normal"

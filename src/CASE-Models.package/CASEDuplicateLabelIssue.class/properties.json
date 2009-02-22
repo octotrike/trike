@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "BEL 11/10/2008 16:17",
-	"super" : "CASEAutomaticIssue",
+	"super" : "CASEIssue",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

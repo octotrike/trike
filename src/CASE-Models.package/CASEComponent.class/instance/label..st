@@ -2,11 +2,8 @@ accessing
 label: aString
 	"Set my human-readable label."
 
+	self session begin.
 	aString = label ifFalse: [
-		parent ifNotNil: [
-			parent proposeLabel: aString for: self as: (parent namespaceOf: self)].
 		label := aString.
-		self triggerEvent: #label with: aString].
-
-
-			
+		self triggerEvent: #aboutToChangeLabel withArguments: {self. label}.
+		self triggerEvent: #changedLabel withArguments: {self. label}]

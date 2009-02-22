@@ -2,5 +2,5 @@ accessing
 localIssues
 	"Answer the Set of Issues that pertain directly to me."
 	
-	^issues
+	^implications select: [:i| i isIssue]
 			

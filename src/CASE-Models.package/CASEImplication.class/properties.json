@@ -1,13 +1,13 @@
 {
-	"commentStamp" : "BEL 2/21/2009 21:14",
-	"super" : "Model",
+	"commentStamp" : "BEL 3/1/2009 13:00",
+	"super" : "Object",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"components",
-		"history"
+		"isPrecious"
 	],
 	"name" : "CASEImplication",
 	"type" : "normal"

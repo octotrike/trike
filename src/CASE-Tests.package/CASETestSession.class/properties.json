@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "TestResource",
+	"category" : "CASE-Tests-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"session"
+	],
+	"name" : "CASETestSession",
+	"type" : "normal"
+}

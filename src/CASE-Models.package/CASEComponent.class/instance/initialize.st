@@ -4,6 +4,5 @@ initialize
 	
 	super initialize.
 	components := self newComponents.
-	issues := Set new.
-	requiresUniqueLabels := self defaultRequiresUniqueLabels
+	implications := Set new.
 	
