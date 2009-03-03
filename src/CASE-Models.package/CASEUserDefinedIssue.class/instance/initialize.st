@@ -3,4 +3,4 @@ initialize
 	"Set my default values."
 	
 	super initialize.
-	isPrecious := true
+	implicitDeleteIsAllowed := false

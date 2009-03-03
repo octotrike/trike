@@ -4,4 +4,4 @@ initialize
 	
 	super initialize.
 	components := IdentitySet new.
-	isPrecious := false
+	implicitDeleteIsAllowed := true

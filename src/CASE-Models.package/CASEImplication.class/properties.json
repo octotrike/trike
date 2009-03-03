@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "BEL 3/1/2009 13:00",
+	"commentStamp" : "BEL 3/2/2009 18:21",
 	"super" : "Object",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
@@ -7,7 +7,7 @@
 	"classvars" : [ ],
 	"instvars" : [
 		"components",
-		"isPrecious"
+		"implicitDeleteIsAllowed"
 	],
 	"name" : "CASEImplication",
 	"type" : "normal"
