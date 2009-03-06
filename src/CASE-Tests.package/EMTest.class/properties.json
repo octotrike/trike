@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "CASEComponentTest",
 	"category" : "CASE-Tests-Models",
 	"classinstvars" : [ ],
 	"pools" : [ ],

@@ -1,0 +1,7 @@
+initalization
+newReannouncementQueue
+
+	^OrderedCollection new
+	
+	
+	

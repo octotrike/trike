@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEChangeAnnouncement",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"oldValue",
+		"newValue"
+	],
+	"name" : "CASEValueChangeAnnouncement",
+	"type" : "normal"
+}

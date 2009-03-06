@@ -2,15 +2,17 @@ accessing
 addImplication: anImplication
 	"Add an Implication that pertains to me."
 
-	(implications includes: anImplication) ifFalse: [
+	(implications includes: anImplication) ifFalse: [ | session | 
+		session := self session.
+		session begin.
+		
 		self noBalanceAddImplication: anImplication.
 		anImplication noBalanceAdd: self.
-			
-		self triggerEvent: #aboutToAddImplication withArguments: {self. anImplication}.
-		anImplication triggerEvent: #aboutToAddComponent withArguments: {anImplication. self}.
+
+		self announce: (CASEAboutToAddImplication object: anImplication).
+		anImplication announce: (CASEAboutToAddComponent object: self).
 		
-		self triggerEvent: #addedImplication withArguments: {self. anImplication}.
-		anImplication triggerEvent: #addedComponent withArguments: {anImplication. self}].
+		session commit].
 	
 	^anImplication
 			

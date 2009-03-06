@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEComponentTest",
+	"category" : "CASE-Tests-Models",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DFDTest",
+	"type" : "normal"
+}

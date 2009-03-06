@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "Error",
+	"super" : "CASEError",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

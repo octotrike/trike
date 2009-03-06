@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEAddAnnouncement",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CASEAddedImplication",
+	"type" : "normal"
+}

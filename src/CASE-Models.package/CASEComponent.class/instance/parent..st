@@ -1,9 +1,11 @@
 accessing
 parent: newModel
 	"Set my container."
-	 | newNamespace oldModel oldNamespace |
 
-	parent == newModel ifFalse: [
+	parent == newModel ifFalse: [ | newNamespace oldModel oldNamespace session | 
+		session := self session.
+		session begin.
+		
 		oldModel := parent.
 		self noBalanceParent: newModel.
 		oldModel ifNotNil: [
@@ -13,14 +15,11 @@ parent: newModel
 			newNamespace := newModel defaultNamespaceOf: self.
 			newModel noBalanceAdd: self as: newNamespace].
 
-		oldModel ifNotNil: [
-			oldModel triggerEvent: #aboutToRemoveComponent withArguments: {oldModel. oldNamespace. self}].
-			self triggerEvent: #aboutToChangeParent withArguments: {self. newModel}.
-		newModel ifNotNil: [
-			newModel triggerEvent: #aboutToAddComponent withArguments: {newModel. newNamespace. self}].
 	
 		oldModel ifNotNil: [
-			oldModel triggerEvent: #removedComponent withArguments: {oldModel. oldNamespace. self}].
-		self triggerEvent: #changedParent withArguments: {self. newModel}.
-		newModel ifNotNil: [
-			newModel triggerEvent: #addedComponent withArguments: {newModel. newNamespace. self}]].
+			oldModel announce: (CASEAboutToRemoveComponent object: self from: oldNamespace)].
+		oldModel = self ifFalse: [
+			self announce: (CASEAboutToChangeParent from: oldModel to: newModel)].
+		newModel announce: (CASEAboutToAddComponent object: self to: newNamespace).
+	
+		session commit].

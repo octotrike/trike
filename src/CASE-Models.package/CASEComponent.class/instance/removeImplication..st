@@ -2,15 +2,17 @@ accessing
 removeImplication: anImplication
 	"Remove an Implication that no longer pertains to me."
 
-	(implications includes: anImplication) ifTrue: [
+	(implications includes: anImplication) ifTrue: [ | session | 
+		session := self session.
+		session begin.
+		
 		self noBalanceRemoveImplication: anImplication.
 		anImplication noBalanceRemove: self.
-			
-		self triggerEvent: #aboutToRemoveImplication withArguments: {self. anImplication}.
-		anImplication triggerEvent: #aboutToRemoveComponent withArguments: {anImplication. self}.
+	
+		self announce: (CASEAboutToRemoveImplication object: anImplication).
+		anImplication announce: (CASEAboutToRemoveComponent object: self).
 		
-		self triggerEvent: #removedImplication withArguments: {self. anImplication}.
-		anImplication triggerEvent: #removedComponent withArguments: {anImplication. self}].
+		session commit].
 
 	^anImplication
 

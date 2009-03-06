@@ -1,0 +1,19 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [
+		"default"
+	],
+	"pools" : [ ],
+	"classvars" : [
+		"SessionRegistry"
+	],
+	"instvars" : [
+		"session",
+		"announcer",
+		"reannouncementQueue"
+	],
+	"name" : "CASESession",
+	"type" : "normal"
+}

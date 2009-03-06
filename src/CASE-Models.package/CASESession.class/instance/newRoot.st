@@ -1,0 +1,7 @@
+initalization
+newRoot
+
+	^IdentitySet new
+	
+	
+	

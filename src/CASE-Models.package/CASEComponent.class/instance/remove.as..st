@@ -2,14 +2,17 @@ accessing
 remove: aComponent as: namespace
 	"Remove aComponent from the given namespace in my components."
 	
-	((components at: namespace) includes: aComponent) ifTrue: [
+	((components at: namespace) includes: aComponent) ifTrue: [ | oldModel session | 
+		session := self session.
+		session begin.
+		
+		oldModel := parent.
 		aComponent noBalanceParent: nil.
 		self noBalanceRemove: aComponent as: namespace.
-			
-		self triggerEvent: #aboutToRemoveComponent withArguments: {self. namespace. aComponent}.
-		aComponent triggerEvent: #aboutToChangeParent withArguments: {aComponent. nil}.
 		
-		self triggerEvent: #removedComponent withArguments: {self. namespace. aComponent}.
-		aComponent triggerEvent: #changedParent withArguments: {aComponent. nil}].
+		oldModel announce: (CASEAboutToRemoveComponent object: aComponent from: namespace).
+		aComponent announce: (CASEAboutToChangeParent from: self to: nil).
+	
+		session commit].
 	
 	^aComponent

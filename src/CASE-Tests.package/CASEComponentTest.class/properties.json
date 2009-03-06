@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "CASETest",
-	"category" : "CASE-Tests-Models",
+	"category" : "CASE-Tests-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

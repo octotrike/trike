@@ -2,8 +2,13 @@ accessing
 label: aString
 	"Set my human-readable label."
 
-	self session begin.
-	aString = label ifFalse: [
+	aString = label ifFalse: [ | oldLabel session | 
+		session := self session.
+		session begin.
+		
+		oldLabel := label.
 		label := aString.
-		self triggerEvent: #aboutToChangeLabel withArguments: {self. label}.
-		self triggerEvent: #changedLabel withArguments: {self. label}]
+		
+		self announce: (CASEAboutToChangeLabel from: oldLabel to: label).
+
+		session commit].
