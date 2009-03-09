@@ -5,9 +5,7 @@ testImplications
 	j := self targetClass labeled: 'cog'.
 	a := CASEUserDefinedIssue on: nil summary: 'teeth slip under load' description: 'either cog A is too small or cog B is off center'.
 	session := self session.
-	session begin.
-	session root addAll: {i. j. a.}.
-	session commit.
+	session addAll: {i. j. a.}.
 	i when: #aboutToAddImplication send: #receiveEvent:with:andKeep: to: self withArguments: {#target. #newImplication. #aboutToAddImplication}.
 	i when: #addedImplication send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #newImplication. #addedImplication}.
 	j when: #aboutToAddImplication send: #receiveEvent:with:andKeep: to: self withArguments: {#target. #newImplication. #aboutToAddImplication}.
@@ -16,9 +14,7 @@ testImplications
 	a when: #addedComponent send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #newComponent. #addedComponent}.
 	
 	"When a component gets a new issue, it should trigger #aboutToAddImplication, then #addedImplication and include the issue thereafter.  The issue should trigger #aboutToAddComponent, then #addedComponent and have the component as a component thereafter."
-	session begin.
 	i addImplication: a.
-	session commit.
 	self should: [receivedEvents includes: #aboutToAddImplication].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: i].	"#newComponent"
@@ -32,9 +28,7 @@ testImplications
 	self clearReceivedEvents.
 
 	"When a component is asked to add an issue it already has, it should remain unchanged.  It should NOT trigger #aboutToAddImplication or #addedImplication, and the issue should NOT trigger #aboutToAddComponent or #addedComponent."
-	session begin.
 	i addIssue: a.
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self should: [i localImplications includes: a].
 	self should: [i localImplications size = 1].
@@ -42,9 +36,7 @@ testImplications
 	self should: [a components size = 1].
 	
 	"When an issue which already has a component is added to another component, the component to which the issue is added should trigger #aboutToAddImplication, then #addedImplication and include the issue thereafter.  The issue should trigger #aboutToAddComponent, then #addedComponent and have both components as components thereafter."
-	session begin.
 	j addIssue: a.
-	session commit.
 	self should: [receivedEvents includes: #aboutToAddImplication].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: a]. "#newImplication"
@@ -70,9 +62,7 @@ testImplications
 	a when: #removedComponent send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #oldComponent. #removedComponent}.
 
 	"When an issue which has more than one component is removed from one component, the component from which the issue is removed should trigger #aboutToRemoveImplication, then #removedImplication and no longer include the issue.  The issue should trigger #aboutToRemoveComponent, then #removedComponent and no longer have the component thereafter."
-	session begin.
 	i removeImplication: a.
-	session commit.
 	self should: [receivedEvents includes: #aboutToRemoveImplication]. 
 	self should: [receivedEvents includes: #aboutToRemoveComponent]. 
 	self should: [receivedEvents includes: a]. "#oldImplication"
@@ -87,9 +77,7 @@ testImplications
 	self should: [a components size = 1].
 	
 	"When an issue is removed from a component, it should trigger #aboutToRemoveImplication, then #removedImplication and no longer include the component.  The component should trigger #aboutToRemoveComponent, then #removedComponent and no longer have the issue thereafter."
-	session begin.
 	j removeIssue: a.
-	session commit.
 	self should: [receivedEvents includes: #aboutToRemoveImplication]. 
 	self should: [receivedEvents includes: #aboutToRemoveComponent]. 
 	self should: [receivedEvents includes: a]. "#oldImplication"
@@ -103,16 +91,12 @@ testImplications
 	self clearReceivedEvents.
 
 	"When a component is asked to remove a nonexistent issue, it should remain unchanged.  It should NOT trigger #aboutToRemoveImplication or #removedImplication and the issue should NOT trigger #aboutToRemoveComponent or #removedComponent."
-	session begin.
 	j removeIssue: a.
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self shouldnt: [j localImplications includes: a].
 	self should: [j localImplications isEmpty].
 	self shouldnt: [a components includes: j].
 	self should: [a components isEmpty].
 	
-	session begin.
-	session root removeAll: {i. j. a}.
-	session commit.
+	session removeAll: {i. j. a}.
 

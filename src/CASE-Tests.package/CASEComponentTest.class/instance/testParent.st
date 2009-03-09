@@ -5,18 +5,14 @@ testParent
 	q := self parentClass labeled: 'system'.
 	r := self parentClass labeled: 'system'.
 	session := self session.
-	session begin.
-	session root addAll: {i. q. r}.
-	session commit.
+	session addAll: {i. q. r}.
 	i when: #aboutToChangeParent send: #receiveEvent:with:andKeep: to: self withArguments: {#target. #newParent. #aboutToChangeParent}.
 	i when: #changedParent send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #newParent. #changedParent}.
 	q when: #aboutToAddComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #newComponent. #aboutToAddComponent}.
 	q when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 	
 	"When a component gets a new parent, it should trigger #aboutToChangeParent, then #changedParent and have the new parent thereafter.  The new parent should trigger #aboutToAddComponent, then #addedComponent and include the component thereafter."
-	session begin.
 	i parent: q.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: q]. "#newParent"
@@ -28,9 +24,7 @@ testParent
 	self clearReceivedEvents.
 		
 	"When a component gets the same parent again, it should remain unchanged.  It should NOT trigger #parent, and the parent should NOT trigger #addComponent."
-	session begin.
 	i parent: q.
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self should: [i parent = q].
 	self should: [q subcomponents includes: i].
@@ -42,9 +36,7 @@ testParent
 	r when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 	
 	"When a component which already has a parent gets a new parent (even one of equivalent name), it should trigger #aboutToChangeParent, then #changedParent and have the new parent as a parent thereafter.  Likewise, the old parent should trigger #aboutToRemoveComponent, then #removedComponent and no longer include the component, and the new parent should trigger #aboutToAddComponent and addedComponent and include the component thereafter."
-	session begin.
 	i parent: r.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: #aboutToRemoveComponent].
@@ -63,9 +55,7 @@ testParent
 	r when: #removedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #oldComponent. #removedComponent}.
 	
 	"When a component gets a nil parent, it should trigger #parent and have nil as a parent thereafter.  The old parent should trigger #removeComponent and no longer include the component."
-	session begin.
 	i parent: nil.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToRemoveComponent].
 	self should: [receivedEvents includes: nil]. "#newParent"
@@ -82,7 +72,6 @@ testParent
 	r when: #aboutToAddComponent send: #signal to: CASEAbortTransaction.
 		
 	"When changing an object's parent is interrupted in mid-change as the result of #aboutToAddComponent, #aboutToChangeParent and #aboutToAddComponent should be triggered, but #changedParent and #addedComponent should not, and the object should continue to have the old parent."
-	session begin.
 	self should: [i parent: r] raise: CASEAbortTransaction.
 	self should: [i parent = r].
 	session abort.
@@ -93,6 +82,4 @@ testParent
 	self should: [i parent = nil].
 	self shouldnt: [r subcomponents includes: i].
 	
-	session begin.
-	session root removeAll: {i. q. r}.
-	session commit.
+	session removeAll: {i. q. r}.

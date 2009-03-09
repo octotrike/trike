@@ -6,18 +6,14 @@ testComponents
 	q := self parentClass labeled: 'system'.
 	r := self parentClass labeled: 'system'.
 	session := self session.
-	session begin.
-	session root addAll: {i. j. q. r}.
-	session commit.
+	session addAll: {i. j. q. r}.
 	i when: #aboutToChangeParent send: #receiveEvent:with:andKeep: to: self withArguments: {#target. #newParent. #aboutToChangeParent}.
 	i when: #changedParent send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #newParent. #changedParent}.
 	q when: #aboutToAddComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #newComponent. #aboutToAddComponent}.
 	q when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 
 	"When a model gets a new component, it should trigger #aboutToAddComponent, then #addedComponent and include the component thereafter.  The new component should trigger  #aboutToChangeParent, then #changedParent and have the model as a parent thereafter."
-	session begin.
 	q add: i as: #subcomponent.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: q]. "#newParent"
@@ -30,9 +26,7 @@ testComponents
 	self clearReceivedEvents.
 
 	"When a model is asked to add a component it already contains in the given namespace, it should remain unchanged.  It should NOT trigger #aboutToAddComponent or #addedComponent, and the component should NOT trigger #aboutToChangeParent or #changedParent."
-	session begin.
 	q add: i as: #subcomponent.	
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self should: [i parent = q].
 	self should: [q subcomponents includes: i].
@@ -45,9 +39,7 @@ testComponents
 	r when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 
 	"When a component which already has a parent is added to a new model (even one of equivalent name), it should trigger #aboutToChangeParent, then #changedParent and have the new parent as a parent thereafter.  Likewise, the old parent should trigger #aboutToRemoveComponent, then #removedComponent and no longer include the component, and the new parent should trigger #aboutToAddComponent and addedComponent and include the component thereafter."
-	session begin.
 	r add: i as: #subcomponent.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: #aboutToRemoveComponent].
@@ -66,9 +58,7 @@ testComponents
 	r when: #removedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #oldComponent. #removedComponent}.
 	
 	"When a model is asked to add a component it already contains in a different namespace, it should move the component from the old namespace to the new one.  It should trigger #aboutToRemoveComponent, #aboutToAddComponent, #removedComponent and #addedComponent, but the component should NOT trigger #aboutToChangeParent or #changedParent."
-	session begin.
 	r add: i as: #implementation.
-	session commit.
 	self shouldnt: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [receivedEvents includes: #aboutToRemoveComponent].
@@ -83,9 +73,7 @@ testComponents
 	self clearReceivedEvents.
 	
 	"When a component is removed from a model, it should trigger #aboutToChangeParent, then #changedParent and have nil as a parent thereafter.  The old parent should trigger #aboutToRemoveComponent, then #removedComponent and no longer include the component."
-	session begin.
 	k := r remove: i as: #implementation.
-	session commit.
 	self should: [receivedEvents includes: #aboutToChangeParent].
 	self should: [receivedEvents includes: #aboutToRemoveComponent].
 	self should: [receivedEvents includes: nil]. "#parent"
@@ -100,26 +88,18 @@ testComponents
 	
 	"When a model is asked to remove component which does not exist in the given namespace, it should answer nil and do nothing.  The component should NOT trigger #aboutToChangeParent or #changedParent, and the parent should NOT trigger #aboutToRemoveComponent or #removedComponent."
 	self should: [r isEmpty].	
-	session begin.
 	k := r remove: i as: #subcomponent.
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self should: [k isNil].
 	self should: [r isEmpty].	
 	
-	session begin.
 	q add: i as: #subcomponent.
-	session commit.
 	self clearReceivedEvents.
 	
 	"When a model is asked to remove an equivalent component, it should answer nil and do nothing.  The component should NOT trigger #aboutToChangeParent or #changedParent, and the parent should NOT trigger #aboutToRemoveComponent or #removedComponent."
-	session begin.
 	k := q remove: j as: #subcomponent.
-	session commit.
 	self should: [receivedEvents isEmpty].
 	self should: [k isNil].
 	self should: [q subcomponents size = 1].	
 	
-	session begin.
-	session root removeAll: {i. j. q. r}.
-	session commit.
+	session removeAll: {i. j. q. r}.
