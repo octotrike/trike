@@ -8,6 +8,8 @@ removeImplication: anImplication
 			anImplication noBalanceRemove: self.
 	
 			self announce: (CASEAboutToRemoveImplication object: anImplication).
+			(anImplication isIssue and: [anImplication isActive]) ifTrue: [
+				self announceNoActiveIssuesIfNeeded].
 			anImplication announce: (CASEAboutToRemoveComponent object: self)]].
 
 	^anImplication

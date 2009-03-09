@@ -8,6 +8,8 @@ addImplication: anImplication
 			anImplication noBalanceAdd: self.
 
 			self announce: (CASEAboutToAddImplication object: anImplication).
+			(anImplication isIssue and: [anImplication isActive]) ifTrue: [
+				self announceHasActiveIssuesIfNeeded].
 			anImplication announce: (CASEAboutToAddComponent object: self)]].
 	
 	^anImplication

@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "BEL 3/2/2009 18:21",
-	"super" : "Object",
+	"super" : "CASEAnnouncer",
 	"category" : "CASE-Models-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

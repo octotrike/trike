@@ -2,17 +2,15 @@ accessing
 add: aComponent
 	"Add a Component I pertain to."
 	
-	(components includes: aComponent) ifTrue: [
-		"aComponent is already one of my components."
-		^nil].
-	
-	self noBalanceAdd: aComponent.
-	aComponent noBalanceAddImplication: self.
-	
-	(isActive and: [aComponent activeIssues size = 1]) ifTrue: [
-		aComponent triggerHasActiveIssues: true].
-	aComponent passTriggerUp: #addIssue with: self.
-	self triggerEvent: #addComponent with: aComponent.
+	(components includes: aComponent) ifFalse: [
+		self session commit: [
+			self noBalanceAdd: aComponent.
+			aComponent noBalanceAddImplication: self.
+
+			aComponent announce: (CASEAboutToAddImplication object: self).
+			(self isIssue and: [self isActive]) ifTrue: [
+				aComponent announceHasActiveIssuesIfNeeded].
+			self announce: (CASEAboutToAddComponent object: aComponent)]].
 	
 	^aComponent
 			

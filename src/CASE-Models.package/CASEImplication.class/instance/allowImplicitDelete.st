@@ -2,4 +2,5 @@ accessing
 allowImplicitDelete
 	"Allow myself to be deleted implicitly."
 
-	implicitDeleteIsAllowed := true
+	self session commit: [
+		implicitDeleteIsAllowed := true]

@@ -2,4 +2,5 @@ accessing
 requireExplicitDelete
 	"Prevent myself from being implicitly deleted."
 
-	implicitDeleteIsAllowed := false
+	self session commit: [
+		implicitDeleteIsAllowed := false]

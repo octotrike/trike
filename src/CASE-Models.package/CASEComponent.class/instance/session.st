@@ -3,5 +3,5 @@ session
 	"Answer an appropriate session for me."
 	
 	^self isTop 
-		ifTrue: [CASESession sessionFor: self]
+		ifTrue: [super session]
 		ifFalse: [parent session]

@@ -17,4 +17,5 @@ parent: newModel
 				oldModel announce: (CASEAboutToRemoveComponent object: self from: oldNamespace)].
 			oldModel = self ifFalse: [
 				self announce: (CASEAboutToChangeParent from: oldModel to: newModel)].
-			newModel announce: (CASEAboutToAddComponent object: self to: newNamespace)]]
+			newModel ifNotNil: [
+				newModel announce: (CASEAboutToAddComponent object: self to: newNamespace)]]]

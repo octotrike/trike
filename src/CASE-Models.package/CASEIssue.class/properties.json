@@ -6,8 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"assignedTo",
-		"severity",
 		"isActive"
 	],
 	"name" : "CASEIssue",

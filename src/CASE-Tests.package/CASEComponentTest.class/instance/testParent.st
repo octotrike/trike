@@ -1,84 +1,83 @@
 running
 testParent
-	| i q r session |
+	| i q r iSpy qSpy rSpy session |
 	i := self targetClass labeled: 'cog'.
 	q := self parentClass labeled: 'system'.
 	r := self parentClass labeled: 'system'.
+	iSpy := AnnouncementSpy on: i.
+	qSpy := AnnouncementSpy on: q.
+	rSpy := AnnouncementSpy on: r.
 	session := self session.
 	session addAll: {i. q. r}.
-	i when: #aboutToChangeParent send: #receiveEvent:with:andKeep: to: self withArguments: {#target. #newParent. #aboutToChangeParent}.
-	i when: #changedParent send: #receiveEvent:andKeep:with: to: self withArguments: {#target. #newParent. #changedParent}.
-	q when: #aboutToAddComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #newComponent. #aboutToAddComponent}.
-	q when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 	
 	"When a component gets a new parent, it should trigger #aboutToChangeParent, then #changedParent and have the new parent thereafter.  The new parent should trigger #aboutToAddComponent, then #addedComponent and include the component thereafter."
 	i parent: q.
-	self should: [receivedEvents includes: #aboutToChangeParent].
-	self should: [receivedEvents includes: #aboutToAddComponent].
-	self should: [receivedEvents includes: q]. "#newParent"
-	self should: [receivedEvents includes: i]. "#newComponent"
-	self should: [receivedEvents size = 4].
-	self should: [i parent = q].
+	self should: [iSpy announcements size = 2].
+	self confirm: iSpy announcements first isKindOf: CASEAboutToChangeParent of: i from: nil to: q.
+	self confirm: iSpy announcements second isKindOf: CASEChangedParent of: i from: nil to: q.
+	self should: [i parent == q].
+	self should: [qSpy announcements size = 2].
+	self confirm: qSpy announcements first isKindOf: CASEAboutToAddComponent on: q in: #subcomponent with: i.
+	self confirm: qSpy announcements second isKindOf: CASEAddedComponent on: q in: #subcomponent with: i.
 	self should: [q subcomponents includes: i].
-	
-	self clearReceivedEvents.
+	self should: [q subcomponents size = 1].
+
+	iSpy clear.
+	qSpy clear.	
 		
 	"When a component gets the same parent again, it should remain unchanged.  It should NOT trigger #parent, and the parent should NOT trigger #addComponent."
 	i parent: q.
-	self should: [receivedEvents isEmpty].
+	self should: [iSpy announcements isEmpty].
+	self should: [qSpy announcements isEmpty].
 	self should: [i parent = q].
 	self should: [q subcomponents includes: i].
-.
-	q removeActionsWithReceiver: self.
-	q when: #aboutToRemoveComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #oldComponent. #aboutToRemoveComponent}.
-	q when: #removedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #oldComponent. #removedComponent}.
-	r when: #aboutToAddComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #newComponent. #aboutToAddComponent}.
-	r when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
 	
 	"When a component which already has a parent gets a new parent (even one of equivalent name), it should trigger #aboutToChangeParent, then #changedParent and have the new parent as a parent thereafter.  Likewise, the old parent should trigger #aboutToRemoveComponent, then #removedComponent and no longer include the component, and the new parent should trigger #aboutToAddComponent and addedComponent and include the component thereafter."
 	i parent: r.
-	self should: [receivedEvents includes: #aboutToChangeParent].
-	self should: [receivedEvents includes: #aboutToAddComponent].
-	self should: [receivedEvents includes: #aboutToRemoveComponent].
-	self should: [receivedEvents includes: r]. "#newParent"
-	self should: [receivedEvents includes: i]. "#oldComponent #newComponent"
-	self shouldnt: [receivedEvents includes: q]. "#oldParent"
-	self should: [receivedEvents size = 6].
+	self should: [iSpy announcements size = 2].
+	self confirm: iSpy announcements first isKindOf: CASEAboutToChangeParent of: i from: q to: r.
+	self confirm: iSpy announcements second isKindOf: CASEChangedParent of: i from: q to: r.
 	self should: [i parent == r].
-	self should: [r subcomponents includes: i].
-	self shouldnt: [q subcomponents includes: i].
+	self should: [qSpy announcements size = 2].
+	self confirm: qSpy announcements first isKindOf: CASEAboutToRemoveComponent on: q in: #subcomponent with: i.
+	self confirm: qSpy announcements second isKindOf: CASERemovedComponent on: q in: #subcomponent with: i.
 	self should: [q isEmpty].
-	
-	self clearReceivedEvents.
-	r removeActionsWithReceiver: self.
-	r when: #aboutToRemoveComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #oldComponent. #aboutToRemoveComponent}.
-	r when: #removedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #oldComponent. #removedComponent}.
+	self should: [rSpy announcements size = 2].
+	self confirm: rSpy announcements first isKindOf: CASEAboutToAddComponent on: r in: #subcomponent with: i.
+	self confirm: rSpy announcements second isKindOf: CASEAddedComponent on: r in: #subcomponent with: i.
+	self should: [r subcomponents includes: i].
+	self should: [r subcomponents size = 1].
+
+	iSpy clear.
+	qSpy clear.	
+	rSpy clear.
 	
 	"When a component gets a nil parent, it should trigger #parent and have nil as a parent thereafter.  The old parent should trigger #removeComponent and no longer include the component."
 	i parent: nil.
-	self should: [receivedEvents includes: #aboutToChangeParent].
-	self should: [receivedEvents includes: #aboutToRemoveComponent].
-	self should: [receivedEvents includes: nil]. "#newParent"
-	self should: [receivedEvents includes: i]. "#oldComponent"
-	self should: [receivedEvents size = 4].
+	self should: [iSpy announcements size = 2].
+	self confirm: iSpy announcements first isKindOf: CASEAboutToChangeParent of: i from: r to: nil.
+	self confirm: iSpy announcements second isKindOf: CASEChangedParent of: i from: r to: nil.
+	self should: [rSpy announcements size = 2].
+	self confirm: rSpy announcements first isKindOf: CASEAboutToRemoveComponent on: r in: #subcomponent with: i.
+	self confirm: rSpy announcements second isKindOf: CASERemovedComponent on: r in: #subcomponent with: i.
 	self should: [i parent isNil].
 	self shouldnt: [r subcomponents includes: i].
 	self should: [r isEmpty].
-	
-	self clearReceivedEvents.
-	r removeActionsWithReceiver: self.
-	r when: #aboutToAddComponent send: #receiveEvent:with:with:andKeep: to: self withArguments: {#target. #componentNamespace. #newComponent. #aboutToAddComponent}.
-	r when: #addedComponent send: #receiveEvent:with:andKeep:with: to: self withArguments: {#target. #componentNamespace. #newComponent. #addedComponent}.
-	r when: #aboutToAddComponent send: #signal to: CASEAbortTransaction.
+
+	iSpy clear.
+	rSpy clear.
 		
 	"When changing an object's parent is interrupted in mid-change as the result of #aboutToAddComponent, #aboutToChangeParent and #aboutToAddComponent should be triggered, but #changedParent and #addedComponent should not, and the object should continue to have the old parent."
+	r on: CASEAboutToAddComponent send: #signal to: CASEAbortTransaction.
 	self should: [i parent: r] raise: CASEAbortTransaction.
 	self should: [i parent = r].
+	self should: [r subcomponents includes: i].
+	self should: [iSpy announcements size = 1].
+	self confirm: iSpy announcements first isKindOf: CASEAboutToChangeParent of: i from: nil to: r.
+	self should: [rSpy announcements size = 1].
+	self confirm: rSpy announcements first isKindOf: CASEAboutToAddComponent on: r in: #subcomponent with: i.
 	session abort.
 	self shouldnt: [session inTransaction].
-	self should: [receivedEvents size = 2].
-	self should: [receivedEvents includes: #aboutToChangeParent].
-	self should: [receivedEvents includes: #aboutToAddComponent].
 	self should: [i parent = nil].
 	self shouldnt: [r subcomponents includes: i].
 	
