@@ -1,3 +1,0 @@
-accessing
-root
-	^session root

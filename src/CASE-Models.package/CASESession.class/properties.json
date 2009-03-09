@@ -6,12 +6,9 @@
 		"default"
 	],
 	"pools" : [ ],
-	"classvars" : [
-		"SessionRegistry"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"session",
-		"announcer",
 		"reannouncementQueue"
 	],
 	"name" : "CASESession",

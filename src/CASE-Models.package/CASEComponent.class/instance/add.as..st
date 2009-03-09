@@ -2,9 +2,8 @@ accessing
 add: aComponent as: namespace
 	"Add aComponent to my components in the given namespace."
 
-	((components at: namespace) includes: aComponent) ifFalse: [ | oldModel oldNamespace session | 
-		session := self session.
-		session begin.
+	((components at: namespace) includes: aComponent) ifFalse: [
+		self session commit: [ | oldModel oldNamespace | 
 		
 		oldModel := aComponent parent.
 		oldModel = self ifFalse: [ "aComponent had a different parent"
@@ -18,8 +17,6 @@ add: aComponent as: namespace
 			oldModel announce: (CASEAboutToRemoveComponent object: aComponent from: oldNamespace)].
 		oldModel = self ifFalse: [
 			aComponent announce: (CASEAboutToChangeParent from: oldModel to: self)].
-		self announce: (CASEAboutToAddComponent object: aComponent to: namespace).
-	
-		session commit].
+		self announce: (CASEAboutToAddComponent object: aComponent to: namespace)]].
 
 	^aComponent

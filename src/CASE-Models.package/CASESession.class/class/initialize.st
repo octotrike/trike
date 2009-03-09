@@ -5,7 +5,6 @@ initialize
 	"self initialize"
 	
 	super initialize.
-	SessionRegistry := WeakIdentityKeyDictionary new.
 	Preferences 
 		needsWork;
 		addTextPreference: #modelRepositoryURI

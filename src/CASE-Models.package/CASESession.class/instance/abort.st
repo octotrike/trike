@@ -1,4 +1,4 @@
 transactions
 abort
 	session abort.
-	reannouncementQueue := OrderedCollection new.
+	reannouncementQueue := self newReannouncementQueue.

@@ -1,6 +1,8 @@
 transactions
 commit
-	[session commit] on: MaError do: [reannouncementQueue := OrderedCollection new].
+	[session commit] on: MaError do: [
+		reannouncementQueue := self newReannouncementQueue. 
+		^self].
 	reannouncementQueue do: [:announcement |
-		announcement commit.
-		self announce: announcement]
+		announcement subject announce: announcement asChangedAnnouncement].
+	reannouncementQueue := self newReannouncementQueue.

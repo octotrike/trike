@@ -2,13 +2,10 @@ accessing
 label: aString
 	"Set my human-readable label."
 
-	aString = label ifFalse: [ | oldLabel session | 
-		session := self session.
-		session begin.
+	aString = label ifFalse: [ 
+		self session commit: [ | oldLabel | 
+			oldLabel := label.
+			label := aString.
 		
-		oldLabel := label.
-		label := aString.
-		
-		self announce: (CASEAboutToChangeLabel from: oldLabel to: label).
-
-		session commit].
+			self announce: (CASEAboutToChangeLabel from: oldLabel to: label)]].
+>>>>>>> 2d985ef... Removed session cache, possibly temporarily.
