@@ -1,4 +1,4 @@
-initalization
+initialization
 newReannouncementQueue
 
 	^OrderedCollection new

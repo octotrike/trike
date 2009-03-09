@@ -6,7 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"receivedEvents",
 		"savedPreferences"
 	],
 	"name" : "CASETest",

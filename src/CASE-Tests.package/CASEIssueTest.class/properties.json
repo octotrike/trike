@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEImplicationTest",
+	"category" : "CASE-Tests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CASEIssueTest",
+	"type" : "normal"
+}

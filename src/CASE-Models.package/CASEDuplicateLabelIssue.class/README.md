@@ -3,7 +3,13 @@ An instance of me represents a situation in which more than one component of a m
 Instance Variables
 	components		a Collection of Components, all of which have the same parent and the same label
 
-Events
+Announcements
+
+My class subscribes to these announcements:
+	AboutToChangeLabel
+	AboutToAddComponent
+
+
 
 
 For license see https://github.com/octotrike/trike-core/blob/master/LICENSE.

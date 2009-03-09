@@ -1,4 +1,4 @@
-initalization
+initialization
 on: aURI
 	"Create a session on the given URI and set my initial state,"
 	

@@ -6,6 +6,6 @@ deactivate
 		self session commit: [
 			isActive := false.
 
-			self announce: (CASEAboutToChangeIsActive from: false to: true).
+			self announce: (CASEAboutToChangeIsActive from: true to: false).
 			components do: [:aComponent |
 				aComponent announceNoActiveIssuesIfNeeded]]]

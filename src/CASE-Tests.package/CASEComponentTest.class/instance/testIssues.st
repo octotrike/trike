@@ -4,8 +4,8 @@ testIssues
 	i := self targetClass labeled: 'cog'.
 	q := self parentClass labeled: 'system'.
 	q add: i as: #subcomponent.
-	a := CASEUserDefinedIssue on: nil summary: 'teeth slip under load' description: 'either cog A is too small or cog B is off center'.
-	b := CASEUserDefinedIssue on: nil summary: 'grinding noise' description: 'loud grinding noise during threshing'.
+	a := self issueClass on: nil.
+	b := self issueClass on: nil.
 	iSpy := AnnouncementSpy on: i.
 	qSpy := AnnouncementSpy on: q.
 	session := self session.

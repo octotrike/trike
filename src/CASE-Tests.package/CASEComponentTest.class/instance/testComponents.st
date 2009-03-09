@@ -2,7 +2,7 @@ running
 testComponents
 	| i j k q r iSpy qSpy rSpy session |
 	i := self targetClass labeled: 'cog'.
-	j := CASEComponent labeled: 'cog'.
+	j := self targetClass labeled: 'cog'.
 	q := self parentClass labeled: 'system'.
 	r := self parentClass labeled: 'system'.
 	iSpy := AnnouncementSpy on: i.

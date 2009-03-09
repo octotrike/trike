@@ -4,6 +4,5 @@ setUp
 	
 	super setUp.
 	self 
-		clearReceivedEvents;
 		savePreferences;
 		setPreferences

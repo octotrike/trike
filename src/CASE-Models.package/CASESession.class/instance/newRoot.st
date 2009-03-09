@@ -1,4 +1,4 @@
-initalization
+initialization
 newRoot
 
 	^IdentitySet new
