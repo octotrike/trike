@@ -2,7 +2,7 @@ running
 testIsActive
 	| i iSpy session |
 	i := self targetClass on: #().
-	iSpy := AnnouncementSpy on: i.
+	iSpy := self spyOn: i.
 	session := self session.
 	session add: i.
 	

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEInstanceLifecycleAnnouncement",
+	"category" : "CASE-Tests-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "CASEMockedA",
+	"type" : "normal"
+}

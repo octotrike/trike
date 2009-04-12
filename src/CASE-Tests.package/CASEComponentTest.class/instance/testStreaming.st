@@ -5,7 +5,7 @@ testStreaming
 	q := self parentClass labeled: 'system'.
 
 	self should: [i asString = 'a CASEComponent(cog)'].
-	q add: i as: #subcomponent.
+	q addComponent: i.
 	self should: [i asString = 'a CASEComponent(cog in system)'].
-	q add: i as: #implementation.
+	q addImplementation: i.
 	self should: [i asString = 'a CASEComponent(cog of system)'].

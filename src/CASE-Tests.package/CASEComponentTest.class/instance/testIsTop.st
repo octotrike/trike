@@ -4,8 +4,8 @@ testIsTop
 	i := self targetClass labeled: 'cog'.
 	j := self targetClass labeled: 'alternative'.
 	q := self parentClass labeled: 'system'.
-	q add: j as: #implementation.
-	q add: i as: #subcomponent.
+	q addImplementation: j.
+	q addComponent: i.
 
 	"A component with no parent is a top component."
 	self should: [q isTop].

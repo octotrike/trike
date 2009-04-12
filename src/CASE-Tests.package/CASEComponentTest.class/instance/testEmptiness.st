@@ -9,9 +9,9 @@ testEmptiness
 	self should: [q isEmpty].
 	
 	"A component should still be empty after an implementation is added."
-	q add: j as: #implementation.
+	q addImplementation: j.
 	self should: [q isEmpty].
 		
 	"After a subcomponent is added, a component should no longer be empty."
-	q add: i as: #subcomponent.
+	q addComponent: i.
 	self should: [q notEmpty].

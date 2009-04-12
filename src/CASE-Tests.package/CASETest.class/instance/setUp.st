@@ -4,5 +4,8 @@ setUp
 	
 	super setUp.
 	self 
+		initializeSession;
+		initializeSpies;
+		initializeListeners;
 		savePreferences;
 		setPreferences

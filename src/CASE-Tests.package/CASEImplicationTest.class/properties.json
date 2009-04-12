@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "CASETest",
+	"super" : "CASEAnnouncerTest",
 	"category" : "CASE-Tests-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

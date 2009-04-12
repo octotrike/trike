@@ -1,3 +1,3 @@
 accessing
 session
-	^CASETestSession current session
+	^session ifNil: [session := CASETestSession current session]

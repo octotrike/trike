@@ -1,12 +1,16 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "ClassTestCase",
 	"category" : "CASE-Tests-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"savedPreferences"
+		"savedPreferences",
+		"spies",
+		"listeners",
+		"session",
+		"roots"
 	],
 	"name" : "CASETest",
 	"type" : "normal"

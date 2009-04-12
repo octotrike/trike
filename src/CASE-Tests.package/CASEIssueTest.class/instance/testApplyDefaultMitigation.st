@@ -1,3 +1,0 @@
-running
-testApplyDefaultMitigation
-	self needsWork; shouldBeImplemented

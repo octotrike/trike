@@ -1,12 +1,11 @@
 running
 testLabel
-	| a b i iSpy session |
+	| a b i iSpy |
 	a := 'foo'.
 	b := 'bar'.
 	i := self targetClass labeled: a.
-	iSpy := AnnouncementSpy on: i.
-	session := self session.
-	session add: i.
+	iSpy := self spyOn: i.
+	self add: i.
 	
 	"When an object is created with a label, it should have that label thereafter."
 	self should: [i label = a].
@@ -26,14 +25,14 @@ testLabel
 	
 	"When changing an object's label is aborted in mid-change as the result of AboutToChangeLabel, AboutToChangeLabel should be triggered, but ChangedLabel should not, and the object should continue to have the old label."
 	i on: CASEAboutToChangeLabel send: #signal to: CASEAbortTransaction.
+	self remember: CASEAbortTransaction listensTo: i.
 	self should: [i label: a] raise: CASEAbortTransaction.
 	self should: [i label = a].
 	self should: [iSpy announcements size = 1].
 	self confirm: iSpy announcements first isKindOf: CASEAboutToChangeLabel of: i from: b to: a.
-	session abort.
-	self shouldnt: [session inTransaction].
+	self abort.
+	self shouldnt: [self inTransaction].
 	self should: [i label = b].
 	
-	session remove: i.
 
 	
