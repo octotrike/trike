@@ -1,10 +1,8 @@
 announce
-announce: aChangeAnnouncement
-	| session |
+announce: anAnnouncement
+	^self announce: anAnnouncement withSubject: self reannouncingIfNeeded: true
 	
-	session := self session.
-	aChangeAnnouncement subject: self.
-	aChangeAnnouncement hasBeenCommitted ifFalse: [
-		session inTransaction ifFalse: [CASENoTransaction signal: 'No changes allowed outside a transaction'].
-		session reannounce: aChangeAnnouncement].
-	^super announce: aChangeAnnouncement
+	
+	
+	
+	

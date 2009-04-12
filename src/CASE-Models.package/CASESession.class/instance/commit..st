@@ -1,7 +1,10 @@
 transactions
 commit: aBlock 
-	[session commit: aBlock] on: MaError do: [
+	| result |
+	
+	[result := session commit: aBlock] on: MaError do: [
 		reannouncementQueue := self newReannouncementQueue. 
-		^self].
+		^nil].
 	"Wait to reannounce until we are all the way out of the transaction."
 	self inTransaction ifFalse: [self reannounce].
+	^result

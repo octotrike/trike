@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"label"
+		"label",
+		"namespace"
 	],
 	"name" : "CASEDuplicateLabelIssue",
 	"type" : "normal"

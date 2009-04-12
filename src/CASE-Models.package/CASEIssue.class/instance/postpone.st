@@ -1,4 +1,3 @@
-resolving
+event handling
 postpone
-	"Postpone resolving me.  By default, no action is required."
-	
+	"Postpone resolving myself, i.e. do nothing."

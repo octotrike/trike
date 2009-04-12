@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "BEL 3/29/2009 18:15",
+	"super" : "DFDComponent",
+	"category" : "CASE-Models-Data Flow",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "DFDProcess",
+	"type" : "normal"
+}

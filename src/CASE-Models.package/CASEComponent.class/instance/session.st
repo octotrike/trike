@@ -4,4 +4,4 @@ session
 	
 	^self isTop 
 		ifTrue: [super session]
-		ifFalse: [parent session]
+		ifFalse: [self parent session]

@@ -1,15 +1,18 @@
 {
-	"commentStamp" : "BEL 2/26/2009 21:35",
+	"commentStamp" : "BEL 3/14/2009 23:49",
 	"super" : "CASEAnnouncer",
 	"category" : "CASE-Models-Core",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"converseNamespaces"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"label",
 		"parent",
 		"components",
-		"implications"
+		"implications",
+		"implementations"
 	],
 	"name" : "CASEComponent",
 	"type" : "normal"

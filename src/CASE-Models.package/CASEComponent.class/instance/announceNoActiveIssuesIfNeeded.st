@@ -3,4 +3,4 @@ announceNoActiveIssuesIfNeeded
 
 	self activeIssues ifEmpty: [
 		self announce: (CASEAboutToChangeHasActiveIssues from: true to: false).
-		parent ifNotNil: [parent announceNoActiveIssuesIfNeeded]]
+		self parent ifNotNil: [self parent announceNoActiveIssuesIfNeeded]]

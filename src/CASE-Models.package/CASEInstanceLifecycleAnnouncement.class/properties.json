@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "CASEChangeAnnouncement",
+	"category" : "CASE-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"object"
+	],
+	"name" : "CASEInstanceLifecycleAnnouncement",
+	"type" : "normal"
+}

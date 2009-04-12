@@ -3,5 +3,5 @@ printLabelOn: aStream
 	"Append my qualified label to aStream."
 	
 	aStream nextPutAll: label.
-	parent ifNotNil: [
-		parent printLabelQualifierOn: aStream for: self]
+	self parent ifNotNil: [
+		self parent printLabelQualifierOn: aStream for: self]

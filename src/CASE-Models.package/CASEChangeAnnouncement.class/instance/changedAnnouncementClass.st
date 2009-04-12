@@ -1,5 +1,5 @@
 converting
 changedAnnouncementClass
-	"Answer an equivalent ChangedAnnouncement (vs. an AboutToChangeAnnouncement)."
+	"Answer the class that is equivalent to me, for changes that have been committed."
 	
 	^self class changedAnnouncementClass
