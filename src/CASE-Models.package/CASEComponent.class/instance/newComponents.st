@@ -1,5 +1,10 @@
 initialization
 newComponents
-	"Answer a new Collection prepared to hold Components." 
+	"Answer a new Dictionary prepared to hold Components." 
 	
-	^IdentitySet new
+	| answer |
+	answer := Dictionary new.
+	self namespaces do: [:n |
+		answer at: n put: IdentitySet new].
+	^answer
+	

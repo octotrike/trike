@@ -6,7 +6,7 @@ on: aURI
 	self connect.
 	session root ifNil: [
 		session root: self newRoot].
-	reannouncementQueue := OrderedCollection new.
+	reannouncementQueue := self newReannouncementQueue.
 	
 	
 	

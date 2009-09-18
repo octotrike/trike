@@ -1,5 +1,6 @@
 accessing
 includes: anObject
 
-	^session ifNotNil:[
-	session isPersistent: anObject] ifNil: [false].
+	^session 
+		ifNil: [false] 
+		ifNotNil: [session isPersistent: anObject]

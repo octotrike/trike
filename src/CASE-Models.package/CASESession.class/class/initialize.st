@@ -6,7 +6,6 @@ initialize
 	
 	super initialize.
 	Preferences 
-		needsWork;
 		addTextPreference: #modelRepositoryURI
 		category: #modeling 
 		default: self defaultModelRepositoryURI

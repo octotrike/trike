@@ -4,7 +4,7 @@ activeIssues
 	| answer |
 	
 	answer := implications select: [:i | i isIssue and: [i isActive]].
-	self components do: [:c |
+	self subcomponents do: [:c |
 		answer addAll: c activeIssues].
 	^answer
 			

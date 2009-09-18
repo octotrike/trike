@@ -4,6 +4,6 @@ allImplications
 	| answer |
 	
 	answer := implications copy.
-	self components do: [:c |
+	self subcomponents do: [:c |
 		answer addAll: c allImplications].
 	^answer

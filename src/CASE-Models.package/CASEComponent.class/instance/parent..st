@@ -3,14 +3,18 @@ parent: newModel
 	"Set my container."
 
 	parent == newModel ifFalse: [
-		self session commit: [ | oldModel | 
+		self session commit: [ | newNamespace oldModel oldNamespace | 
 			oldModel := parent.
 			self noBalanceParent: newModel.
-			oldModel ifNotNil: [oldModel noBalanceRemoveComponent: self].
-			newModel ifNotNil: [newModel noBalanceAddComponent: self].
+			oldModel ifNotNil: [
+				oldNamespace := oldModel namespaceOf: self.
+				oldModel noBalanceRemove: self as: oldNamespace].
+			newModel ifNotNil: [
+				newNamespace := newModel defaultNamespaceOf: self.
+				newModel noBalanceAdd: self as: newNamespace].
 
 			oldModel ifNotNil: [
-				oldModel announce: (CASEAboutToRemoveComponent object: self)].
+				oldModel announce: (CASEAboutToRemoveComponent object: self from: oldNamespace)].
 			self announce: (CASEAboutToChangeParent from: oldModel to: newModel).
 			newModel ifNotNil: [
-				newModel announce: (CASEAboutToAddComponent object: self)]]]
+				newModel announce: (CASEAboutToAddComponent object: self to: newNamespace)]]]

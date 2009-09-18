@@ -9,6 +9,6 @@ handleAboutToChangeLabel: anAnnouncement
 	
 	self remove: component.
 	newLabel ifNotNil: [
-		(self class check: model forDuplicatesLabeled: newLabel) ifFalse: [
+		(self class check: model forDuplicatesLabeled: newLabel in: namespace) ifFalse: [
 			self class subscribeToNewComponent: component.
 			self class subscribeToNonOrphanedComponent: component]].

@@ -1,4 +1,3 @@
 testing
 setUp
-	MagmaRepositoryController create: 'caseTestRepository' root: IdentitySet new.
-	session := CASESession on: 'caseTestRepository'.
+	session := CASESession on: 'caseTestRepository' createIfNeeded: true.

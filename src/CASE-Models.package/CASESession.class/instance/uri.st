@@ -1,0 +1,3 @@
+accessing
+uri
+	^session pathName
