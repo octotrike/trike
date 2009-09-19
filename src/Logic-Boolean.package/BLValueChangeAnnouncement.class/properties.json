@@ -1,13 +1,14 @@
 {
-	"commentStamp" : "BEL 9/19/2009 11:37",
-	"super" : "Announcer",
+	"commentStamp" : "",
+	"super" : "BLChangeAnnouncement",
 	"category" : "Logic-Boolean",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"parents"
+		"oldValue",
+		"newValue"
 	],
-	"name" : "BLExpression",
+	"name" : "BLValueChangeAnnouncement",
 	"type" : "normal"
 }

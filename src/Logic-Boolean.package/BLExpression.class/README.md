@@ -1,11 +1,11 @@
-Logic-Boolean is a simple package for manipulating Boolean expressions.   It requires the Interaction-Actions package.
+Logic-Boolean is a simple package for manipulating Boolean expressions.
 
 FEATURES
 	
 - Construct, compare, simplify, modify and evaluate Boolean expressions. 
 - Use the supplied GenericActions to easily build an interface for things end users are likely to want to do.
 - Use any type as an atom in an expression.
-- Register to receive change notifications.
+- Register to receive Announcements.
 
 LIMITATIONS
 
@@ -13,19 +13,19 @@ LIMITATIONS
 - Simplification and comparison are sometimes expensive; the conditions in which they are expensive are deterministic but have not been explored.
 - The conditions in which parentheses matter when constructing BLExpressions have not been explored.
 - Currently BLTruthTables and BLGrayCodes do not support
-	- change notifications or
+	- Announcements or
 	- editing via GenericActions.
 - Some glue is required to edit atoms using GenericActions.
 - Currently evaluation is only supported when atoms are blocks with no arguments.
 
 CLASSES
 
-BLExpression				A Boolean expression (abstract class). 
-	BLClause				Native (tree) representation of a Boolean expression (abstract class).
+BLExpression			A Boolean expression (abstract class). 
+	BLClause			Native (tree) representation of a Boolean expression (abstract class).
 		BLAtomicTerm	Leaf node in a Boolean expression.  Atoms are not Boolean expressions (their type is external to this package & is determined by the package user).  
 		BLCoordinator	Non-leaf (interior) node in a Boolean expression.  
-	BLTruthTable			Alternative representation of a Boolean expression as an array of Boolean outcomes for various combinations (indexed by BLGrayCodes) of Boolean inputs (BLAtomicTerms).  Typically used to simplify or otherwise manipulate a BLClause. 
-	BLGrayCode				Indices into BLTruthTables, typically used during simplification.
+	BLTruthTable		Alternative representation of a Boolean expression as an array of Boolean outcomes for various combinations (indexed by BLGrayCodes) of Boolean inputs (BLAtomicTerms).  Typically used to simplify or otherwise manipulate a BLClause. 
+	BLGrayCode			Indices into BLTruthTables, typically used during simplification.
 
 - Every BLExpression knows who its parents are. Parents may or may not be Boolean expressions.  
 
@@ -48,7 +48,7 @@ Simplifying expressions:
 		BLExpression>>simplify to replace this BLExpression with a simplified expression.  The expression will be replaced for all of its parents.
 	
 Comparing expressions:
-	Two BLAtomicTerms are equivalent when their atoms are equivalent and their negation is the same.
+	Two BLAtomicTerms are equivalent when their atoms are equivalent and their negation (the instance variable) is the same.
 	Two BLExpressions are equivalent according to the rules of Boolean logic.  Parents are not considered.
 
 Evaluating expressions:
@@ -56,17 +56,18 @@ Evaluating expressions:
 		BLExpression>>value to evaluate the atoms (which must respond to #value) in an expression, combine them appropriately, and answer a regular Squeak Boolean.
 	
 Change notification:
-	BLClauses use the events mechanism defined by Object (e.g. triggerEvent:, when:send:to:).  By default, BLClauses will receive only two events:
+	BLClauses are Announcers.  By default, BLClauses will announce the following kinds of events:
 	
-	#clause
-		A BLAtomicTerm will trigger #clause on itself when
-			its not variable changes or
-			its atom changes.
-		Subclasses and other related classes must ensure that any other event which changes the string representation of a BLClause also triggers #clause for that clause.
+	A BLAtomicTerm will announce BLValueChangeAnnouncement immediately after
+		its not variable changes (BLNegationChangeAnnouncement)) or
+		its atom changes (BLAtomChangeAnnouncement).
+	Subclasses and other related classes must ensure that any other event which changes the string representation of a BLClause also makes a BLValueChangeAnnouncement for that clause immediately afterwards.
 	
-	#children
-		A BLCooordinator will trigger #children on itself when children are added or removed.
-		Subclasses must preserve this behavior.
+	A BLCoordinator will announce BLChildrenChangeAnnouncement after
+		children are added (newChildren will be populated)
+		children are removed (oldChildren will be populated)
+		children are replaced (both oldChildren and newChildren will be populated).
+	When multiple children are changed at once, only one announcement is sent; it includes the details for all the changes which occurred together.  Subclasses must preserve this behavior.
 	
 GenericAction support:
 	Use 
@@ -88,7 +89,7 @@ GenericAction support:
 	
 		For BLAtomicTerm>>valueModificationAction to work:
 			An atom must register a GenericAction which allows setting the value of the atom.
-			An atom must trigger #clause on any BLAtomicTerm which points to it, whenever its string representation changes. 
+			An atom must have any BLAtomicTerm which points to it announce BLAtomChangeAnnouncement whenever its string representation changes. 
 			
 	When parents other than BLCoordinators are used, they must implement the following clauseEditing and structureEditingActions.
 

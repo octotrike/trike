@@ -6,7 +6,7 @@ INSPIRATION
 
 LIMITATIONS
 
-- No coverage analysis.
+- No performance tests.
 - No BLClauses with cycles.
 
 INSTANCE VARIABLES

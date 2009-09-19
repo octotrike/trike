@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "BLChangeAnnouncement",
+	"category" : "Logic-Boolean",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"oldChildren",
+		"newChildren"
+	],
+	"name" : "BLChildrenChangeAnnouncement",
+	"type" : "normal"
+}

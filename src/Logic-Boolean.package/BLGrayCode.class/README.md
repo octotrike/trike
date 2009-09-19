@@ -1,5 +1,3 @@
-See BLClause for package comments.
-
 CLASS
 
 Instances of me act as indices into a BLTruthTable.
@@ -12,3 +10,5 @@ index			A String of $0, $1 and $?, representing an index into a BLTruthTable.
 truthTable		The BLTruthTable I index into.
 
 marked		A temporary variable used only during the simplification process.
+		
+See BLExpression for more information.

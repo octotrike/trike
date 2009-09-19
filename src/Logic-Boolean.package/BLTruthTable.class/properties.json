@@ -1,5 +1,4 @@
 {
-	"commentStamp" : "BEL 5/27/2007 17:05",
 	"super" : "BLExpression",
 	"category" : "Logic-Boolean",
 	"classinstvars" : [ ],
