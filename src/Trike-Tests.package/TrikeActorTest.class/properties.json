@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "Trike-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"receivedEvents",
+		"alice"
+	],
+	"name" : "TrikeActorTest",
+	"type" : "normal"
+}
