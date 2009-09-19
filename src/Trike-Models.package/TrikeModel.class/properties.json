@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "BEL 9/24/2005 18:20",
+	"super" : "Object",
+	"category" : "Trike-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"name",
+		"securityObjectives",
+		"assets",
+		"actors",
+		"decisions",
+		"dirty"
+	],
+	"name" : "TrikeModel",
+	"type" : "normal"
+}

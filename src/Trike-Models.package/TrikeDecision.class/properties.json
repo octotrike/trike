@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"planned",
+		"questions",
+		"result"
+	],
+	"name" : "TrikeDecision",
+	"type" : "normal"
+}

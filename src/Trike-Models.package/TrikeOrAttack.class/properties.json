@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "TrikeBooleanAttack",
+	"category" : "Trike-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "TrikeOrAttack",
+	"type" : "normal"
+}

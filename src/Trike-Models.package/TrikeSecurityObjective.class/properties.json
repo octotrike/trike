@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "BEL 9/8/2008 15:12",
+	"super" : "TrikeComponent",
+	"category" : "Trike-Models-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"startingConditions",
+		"startingPrivileges",
+		"threats",
+		"responses"
+	],
+	"name" : "TrikeSecurityObjective",
+	"type" : "normal"
+}
