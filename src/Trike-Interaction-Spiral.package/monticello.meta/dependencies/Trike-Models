@@ -1,0 +1,1 @@
+(name 'Trike-Models-BEL.1' message 'Name change from Trike-Core to match CASE-Models and make sub-packages easier to manage.  Re-integrated tests.' id 'b12291a9-de44-4cdd-a233-09d9b4163ffc' date '19 September 2009' time '12:25:06 pm' author 'BEL' ancestors () stepChildren ())
