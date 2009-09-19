@@ -1,3 +1,0 @@
-accessing
-expectedFailures
-	^#(testDuplicateDoS testDuplicateElv testGenerateDoS testGenerateElv testGenerateElvRule testInitialElv testNoInitialDoS testRemoveDoS testRemoveElv testRemoveElvRule)
