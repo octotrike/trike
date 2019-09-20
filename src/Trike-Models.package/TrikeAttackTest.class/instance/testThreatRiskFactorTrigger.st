@@ -1,7 +1,7 @@
 event handling
 testThreatRiskFactorTrigger
 	| threat |
-	threat := readCleartext attacks any.
+	threat := readCleartext attacks anyOne.
 	threat
 		when: #riskFactor
 		send: #receiveEvent:

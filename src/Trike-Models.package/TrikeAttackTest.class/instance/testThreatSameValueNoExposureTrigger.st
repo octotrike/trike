@@ -1,7 +1,7 @@
 event handling
 testThreatSameValueNoExposureTrigger
 	| threat |
-	threat := readCleartext attacks any.
+	threat := readCleartext attacks anyOne.
 	threat
 		when: #exposure
 		send: #receiveEvent:

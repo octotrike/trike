@@ -1,7 +1,7 @@
 event handling
 testThreatExposureAttacksTrigger
 	| threat |
-	threat := createCleartext attacks any.
+	threat := createCleartext attacks anyOne.
 	model
 		when: #attacks
 		send: #receiveEvent:

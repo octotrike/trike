@@ -2,7 +2,7 @@ accessing
 name: aString 
 	"Set my name to aString."
 	| nameString |
-	nameString := aString withBlanksTrimmed.
+	nameString := aString withBlanksCondensed.
 	nameString := (nameString beginsWith: 'NOT ')
 		ifTrue: [ 
 			self not: true.

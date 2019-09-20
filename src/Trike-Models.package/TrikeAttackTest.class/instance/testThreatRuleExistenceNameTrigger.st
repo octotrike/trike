@@ -2,7 +2,7 @@ event handling
 testThreatRuleExistenceNameTrigger
 	| threat |
 	readCleartext rule: nil.
-	threat := readCleartext attacks any.
+	threat := readCleartext attacks anyOne.
 	threat
 		when: #name
 		send: #receiveEvent:

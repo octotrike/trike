@@ -17,5 +17,5 @@ equivalentRule
 	terms
 		ifEmpty: [^ #Always].
 	terms size = 1
-		ifTrue: [^ terms only].
+		ifTrue: [^ terms anyOne].
 	^ TrikeAndRule withSimplifiedChildren: terms

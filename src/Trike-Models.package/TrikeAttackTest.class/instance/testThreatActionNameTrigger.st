@@ -1,7 +1,7 @@
 event handling
 testThreatActionNameTrigger
 	| threat |
-	threat := readCleartext attacks any.
+	threat := readCleartext attacks anyOne.
 	threat
 		when: #name
 		send: #receiveEvent:

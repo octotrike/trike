@@ -2,7 +2,7 @@ event handling
 testAnAttackNoTrigger
 	"Adding an attack somewhere in an attack tree should not trigger #anAttack: for the model."
 	| threat |
-	threat := createCleartext attacks any.
+	threat := createCleartext attacks anyOne.
 	model
 		when: #anAttack:
 		send: #receiveEvent:

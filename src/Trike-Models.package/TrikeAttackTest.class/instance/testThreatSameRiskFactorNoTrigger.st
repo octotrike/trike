@@ -1,7 +1,7 @@
 event handling
 testThreatSameRiskFactorNoTrigger
 	| threat |
-	threat := readCleartext attacks any.
+	threat := readCleartext attacks anyOne.
 	threat riskFactor: 5.
 	threat
 		when: #riskFactor

@@ -6,7 +6,7 @@ ruleFromCodeCombinations
 	cells, 
 	groupings of four cells, . . . until all the terms are displayed."
 	| terms |
-	self needsWork.
+	self flag: #todo. 
 	"Should implement extra step."
 	terms := OrderedCollection new.
 	codeCombinations size - 1
@@ -17,5 +17,5 @@ ruleFromCodeCombinations
 	terms
 		ifEmpty: [^ #Never].
 	terms size = 1
-		ifTrue: [^ terms only].
+		ifTrue: [^ terms anyOne].
 	^ TrikeOrRule withSimplifiedChildren: terms
