@@ -1,4 +1,4 @@
-*Interaction-Diagrams-Ross Method
+*CASE-Interaction
 graphModel: anObject
 	"Set my graph model to anObject."
 	
