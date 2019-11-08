@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "BrenLarcom 11/1/2019 19:52",
+	"super" : "BaselineOf",
+	"category" : "BaselineOfTrike",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "BaselineOfTrike",
+	"type" : "normal"
+}
