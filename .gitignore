@@ -1,0 +1,6 @@
+# Temporary files sometimes left in Working Copy when
+# other applications move files, but iCloud is off
+.*.icloud
+
+# Scratch files
+*~
